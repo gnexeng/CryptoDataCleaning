@@ -13,24 +13,35 @@
 # file structure: 4,5-c3750-v2-0-0.txt  --->  103,203-c3750-v2-0-0.txt
 
 
-#path = f'C:\\Users\\gnexe\\OneDrive\\Documents\\GitHub\\coning-analysis\\with-v2.0-fixes\\'
+# path = f'C:\\Users\\gnexe\\OneDrive\\Documents\\GitHub\\coning-analysis\\with-v2.0-fixes\\'
 path = './coning-analysis/with-v2.0-fixes/'
 tests = ['Frequency',
- 'BlockFrequency',
- 'CumulativeSums',
- 'Runs',
- 'LongestRun',
- 'Rank',
- 'FFT',
- 'OverlappingTemplate',
- 'Universal',
- 'ApproximateEntropy',
- 'Serial',
- 'LinearComplexity']
-
-#f_vectors = [(x, y) for x in range(4, 104) for y in range(5, 204, 2)]
+         'BlockFrequency',
+         'CumulativeSums',
+         'Runs',
+         'LongestRun',
+         'Rank',
+         'FFT',
+         'OverlappingTemplate',
+         'Universal',
+         'ApproximateEntropy',
+         'Serial',
+         'LinearComplexity']
 
 
+def create_list_f_vectors(x: int, y: int, total: int):
+    """
+    Creates a list of f-vectors starting such that (x,y)->(x+1,y+2)->...
+    :param x: starting value
+    :param y: starting value
+    :param total: total number of f-vectors to generate
+    :return: list of f-vectors as tuples
+    """
+    from itertools import count
+    x_counter = count(x)
+    y_counter = count(y, 2)
+    f_vectors = [(next(x_counter), next(y_counter)) for _ in range(total)]
+    return f_vectors
 
 
 # ONLY RUN ONE TIME
@@ -39,6 +50,7 @@ def create_files():
         extension = '.csv'
         file = open(f'{val + extension}', 'w')
         file.close()
+
 
 def testing_file(val):
     in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
@@ -67,20 +79,19 @@ def testing_file(val):
             continue
 
 
-
 def extract_first_batch():
     # for each value VAL between 3750 - 3849
     for val in range(3750, 3850):
-        #Open filename 3,3-cVAL-v2-0-0.txt at path
+        # Open filename 3,3-cVAL-v2-0-0.txt at path
         in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
 
-        #For each line:
+        # For each line:
         for line in in_file:
-        #    split line at spaces
+            #    split line at spaces
             try:
                 if line.index(' 0.'):
                     idx = line.find(' 0.')
-                    p_value = float(line[idx+1:idx+9])   # extract the p-value
+                    p_value = float(line[idx + 1:idx + 9])  # extract the p-value
                     test_name = line.split(' ')[-1].strip()  # extract the name of test for this p_value
                     # open file test_name.csv
                     if test_name in tests:
@@ -94,19 +105,20 @@ def extract_first_batch():
     # close all files
     in_file.close()
 
+
 def extract_second_batch():
     # for each value VAL between 3750 - 3849
     for val in range(3750, 3850):
-        #Open filename 3,3-cVAL-v2-0-0.txt at path
+        # Open filename 3,3-cVAL-v2-0-0.txt at path
         in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
 
-        #For each line:
+        # For each line:
         for line in in_file:
-        #    split line at spaces
+            #    split line at spaces
             try:
                 if line.index(' 0.'):
                     idx = line.find(' 0.')
-                    p_value = float(line[idx+1:idx+9])   # extract the p-value
+                    p_value = float(line[idx + 1:idx + 9])  # extract the p-value
                     test_name = line.split(' ')[-1].strip()  # extract the name of test for this p_value
                     # open file test_name.csv
                     if test_name in tests:
@@ -118,14 +130,13 @@ def extract_second_batch():
             except ValueError:
                 continue
 
+
 def main():
-    print(f_vectors)
-    #create_files()
-    #testing_file(3750)
-    #extract_first_batch()
+    # create_files()
+    # testing_file(3750)
+    # extract_first_batch()
     pass
 
 
 if __name__ == "__main__":
     main()
-
