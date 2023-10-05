@@ -1,5 +1,6 @@
 # To extract the following NIST tests from files in
 # C:\Users\gnexe\OneDrive\Documents\GitHub\coning-analysis\with-v2.0-fixes
+# ./coning-analysis/with-v2.0-fixes/
 
 # Tests: Frequency, BlockFrequency, CumulativeSums, Runs, LongestRun, Rank, FFT
 # OverlappingTemplate, Universal, ApproximateEntropy, Serial, LinearComplexity
@@ -11,10 +12,9 @@
 # Second batch: f-vector (4,5) -> (103-203) applying coning 3750 times
 # file structure: 4,5-c3750-v2-0-0.txt  --->  103,203-c3750-v2-0-0.txt
 
-import os
-import re
 
-path = f'C:\\Users\\gnexe\\OneDrive\\Documents\\GitHub\\coning-analysis\\with-v2.0-fixes\\'
+#path = f'C:\\Users\\gnexe\\OneDrive\\Documents\\GitHub\\coning-analysis\\with-v2.0-fixes\\'
+path = './coning-analysis/with-v2.0-fixes/'
 tests = ['Frequency',
  'BlockFrequency',
  'CumulativeSums',
@@ -29,6 +29,8 @@ tests = ['Frequency',
  'LinearComplexity']
 
 #f_vectors = [(x, y) for x in range(4, 104) for y in range(5, 204, 2)]
+
+
 
 
 # ONLY RUN ONE TIME
