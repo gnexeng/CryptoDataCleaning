@@ -42,7 +42,7 @@ def create_list_f_vectors(x: int, y: int, total: int):
     return f_vectors
 
 
-def file_processing(file_name, val, vector, file_name_modifier="", path_modifier=""):
+def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_modifier=''):
     # For each line:
     for line in file_name:
         #    split line at spaces
@@ -53,7 +53,8 @@ def file_processing(file_name, val, vector, file_name_modifier="", path_modifier
                 test_name = line.split(' ')[-1].strip()  # extract the name of test for this p_value
                 # open file test_name.csv
                 if test_name in tests:
-                    out_file = open(f'{test_name}-{file_name_modifier}.csv', 'a')
+                    # In windows must add \\ to path names
+                    out_file = open(f'{test_name}-{out_file_name_modifier}.csv', 'a')
                     # append pair VAL, p-value to filename test_name.csv
                     out_file.write(f'{p_value},{val},{vector}\n')
                     # close file test_name.csv
@@ -62,24 +63,26 @@ def file_processing(file_name, val, vector, file_name_modifier="", path_modifier
             continue
 
 
-def extract_coning_test():
+def extract_coning_test(local_dir_name='3-3-3750-3849'):
     global path
     # for each value VAL between 3750 - 3849
     for val in range(3750, 3850):
         # Open filename 3,3-cVAL-v2-0-0.txt at path
         in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
-        file_processing(in_file, val=val, vector=(3, 3), file_name_modifier='coning')
+        file_processing(in_file, val=val, vector=(3, 3), out_file_name_modifier='coning',
+                        out_path_modifier=f'\\{local_dir_name}\\')
         in_file.close()
 
 
-def extract_vectors_test():
+def extract_vectors_test(local_dir_name='4-5-103-203-3750'):
     global path
     # for each f-vector between (4,5) ---> (103,203)
     f_vectors = create_list_f_vectors(4, 5, 100)
     for x, y in f_vectors:
         # Open filename x,y-c3750-v2-0-0.txt at path
         in_file = open(path + f'{x},{y}-c3750-v2-0-0.txt', 'r')
-        file_processing(in_file, val=3750, vector=(x, y), file_name_modifier='vectors')
+        file_processing(in_file, val=3750, vector=(x, y), out_file_name_modifier='vectors',
+                        out_path_modifier=f'\\{local_dir_name}\\')
         in_file.close()
 
 
