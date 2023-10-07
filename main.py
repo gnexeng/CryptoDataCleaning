@@ -54,7 +54,7 @@ def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_
                 # open file test_name.csv
                 if test_name in tests:
                     # In windows must add \\ to path names
-                    out_file = open(f'{test_name}-{out_file_name_modifier}.csv', 'a')
+                    out_file = open(f'{out_path_modifier}{test_name}-{out_file_name_modifier}.csv', 'a')
                     # append pair VAL, p-value to filename test_name.csv
                     out_file.write(f'{p_value},{val},{vector}\n')
                     # close file test_name.csv
