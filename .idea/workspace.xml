@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="955c59aa-d200-4f76-83c0-d3ade20e0506" name="Changes" comment="more refactoring">
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/ApproximateEntropy-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/BlockFrequency-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/CumulativeSums-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/FFT-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/Frequency-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/LinearComplexity-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/LongestRun-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/OverlappingTemplate-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/Rank-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/Runs-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/Serial-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-3-3750-3849/Universal-coning.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/ApproximateEntropy-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/BlockFrequency-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/CumulativeSums-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/FFT-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/Frequency-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/LinearComplexity-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/LongestRun-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/OverlappingTemplate-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/Rank-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/Runs-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/Serial-vectors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4-5-103-203-3750/Universal-vectors.csv" afterDir="false" />
+    <list default="true" id="955c59aa-d200-4f76-83c0-d3ade20e0506" name="Changes" comment="in process of fixing directory access.">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -125,7 +102,7 @@
       <workItem from="1696443168019" duration="8300000" />
       <workItem from="1696694399620" duration="2600000" />
       <workItem from="1696699370285" duration="150000" />
-      <workItem from="1696699527803" duration="1176000" />
+      <workItem from="1696699527803" duration="2382000" />
     </task>
     <task id="LOCAL-00001" summary="-Create list of files&#10;-extract data from first experiment&#10;-need yet to finish the second experiment data extraction">
       <option name="closed" value="true" />
@@ -159,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696699740828</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="in process of fixing directory access.">
+      <option name="closed" value="true" />
+      <created>1696701679421</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696701679421</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,9 +167,10 @@
     <MESSAGE value="- ran extraction of first batch again" />
     <MESSAGE value="more refactoring." />
     <MESSAGE value="more refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="more refactoring" />
+    <MESSAGE value="in process of fixing directory access." />
+    <option name="LAST_COMMIT_MESSAGE" value="in process of fixing directory access." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CryptoDataCleaning$main.coverage" NAME="main Coverage Results" MODIFIED="1696700682494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CryptoDataCleaning$main.coverage" NAME="main Coverage Results" MODIFIED="1696701638221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
