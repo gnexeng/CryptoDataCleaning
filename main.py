@@ -78,6 +78,24 @@ def testing_file(val):
         except ValueError:
             continue
 
+def file_processing(file_name):
+    # For each line:
+    for line in file_name:
+        #    split line at spaces
+        try:
+            if line.index(' 0.'):
+                idx = line.find(' 0.')
+                p_value = float(line[idx + 1:idx + 9])  # extract the p-value
+                test_name = line.split(' ')[-1].strip()  # extract the name of test for this p_value
+                # open file test_name.csv
+                if test_name in tests:
+                    out_file = open(test_name + '.csv', 'a')
+                    # append pair VAL, p-value to filename test_name.csv
+                    out_file.write(f'{p_value},{val}\n')
+                    # close file test_name.csv
+                    out_file.close()
+        except ValueError:
+            continue
 
 def extract_first_batch():
     # for each value VAL between 3750 - 3849
@@ -85,51 +103,19 @@ def extract_first_batch():
         # Open filename 3,3-cVAL-v2-0-0.txt at path
         in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
 
-        # For each line:
-        for line in in_file:
-            #    split line at spaces
-            try:
-                if line.index(' 0.'):
-                    idx = line.find(' 0.')
-                    p_value = float(line[idx + 1:idx + 9])  # extract the p-value
-                    test_name = line.split(' ')[-1].strip()  # extract the name of test for this p_value
-                    # open file test_name.csv
-                    if test_name in tests:
-                        out_file = open(test_name + '.csv', 'a')
-                        # append pair VAL, p-value to filename test_name.csv
-                        out_file.write(f'{p_value},{val}\n')
-                        # close file test_name.csv
-                        out_file.close()
-            except ValueError:
-                continue
-    # close all files
+        file_processing(in_file)
     in_file.close()
 
 
 def extract_second_batch():
-    # for each value VAL between 3750 - 3849
-    for val in range(3750, 3850):
-        # Open filename 3,3-cVAL-v2-0-0.txt at path
-        in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
+    # for each f-vector between (4,5) ---> (103,203)
+    f_vectors = create_list_f_vectors(4, 5, 100)
+    for x, y in f_vectors:
+        # Open filename x,y-c3750-v2-0-0.txt at path
+        in_file = open(path + f'{x},{y}-c3750-v2-0-0.txt', 'r')
 
-        # For each line:
-        for line in in_file:
-            #    split line at spaces
-            try:
-                if line.index(' 0.'):
-                    idx = line.find(' 0.')
-                    p_value = float(line[idx + 1:idx + 9])  # extract the p-value
-                    test_name = line.split(' ')[-1].strip()  # extract the name of test for this p_value
-                    # open file test_name.csv
-                    if test_name in tests:
-                        out_file = open(test_name + '.csv', 'a')
-                        # append pair VAL, p-value to filename test_name.csv
-                        out_file.write(f'{p_value},{val}\n')
-                        # close file test_name.csv
-                        out_file.close()
-            except ValueError:
-                continue
-
+        file_processing(in_file)
+    in_file.close()
 
 def main():
     # create_files()
