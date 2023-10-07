@@ -46,7 +46,7 @@ def create_files(mod=""):
     for val in tests:
         extension = '.csv'
         file = open(f'{val}-{mod}{extension}', 'w')
-        file.write('p_value, coning, f-vector-dim-1, f-vector-dim-2')
+        file.write('p_value, coning, f-vector-dim-1, f-vector-dim-2\n')
         file.close()
 
 
@@ -102,12 +102,7 @@ def extract_vectors_test(out_dir='4-5-103-203-3750'):
 
 
 def main():
-    # global project_dir
-    # # Testing os for relative path
-    # out_file_dir = os.path.join(project_dir, '4-5-103-203-3750/ApproximateEntropy-vectors.csv')
-    # print(out_file_dir)
-
-    #create_files('coning')
+    #create_files('vectors')
 
     extract_coning_test()
     extract_vectors_test()
