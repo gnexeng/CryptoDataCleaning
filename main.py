@@ -46,6 +46,7 @@ def create_files(mod=""):
     for val in tests:
         extension = '.csv'
         file = open(f'{val}-{mod}{extension}', 'w')
+        file.write('p_value, coning, f-vector-dim-1, f-vector-dim-2')
         file.close()
 
 
@@ -66,7 +67,7 @@ def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_
                     out_dir_path = os.path.join(project_dir, f'{out_path_dir}/{test_name}-{out_file_name_modifier}')
                     out_file = open(out_dir_path, 'a')
                     # append pair VAL, p-value to filename test_name.csv
-                    out_file.write(f'{p_value},{val},{vector}\n')
+                    out_file.write(f'{p_value},{val},{vector[0]},{vector[1]}\n')
                     # close file test_name.csv
                     out_file.close()
         except ValueError:
@@ -106,6 +107,7 @@ def main():
     # out_file_dir = os.path.join(project_dir, '4-5-103-203-3750/ApproximateEntropy-vectors.csv')
     # print(out_file_dir)
 
+    #create_files('coning')
 
     extract_coning_test()
     extract_vectors_test()
