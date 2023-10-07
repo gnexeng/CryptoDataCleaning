@@ -78,7 +78,7 @@ def testing_file(val):
         except ValueError:
             continue
 
-def file_processing(file_name):
+def file_processing(file_name, val, vector):
     # For each line:
     for line in file_name:
         #    split line at spaces
@@ -91,7 +91,7 @@ def file_processing(file_name):
                 if test_name in tests:
                     out_file = open(test_name + '.csv', 'a')
                     # append pair VAL, p-value to filename test_name.csv
-                    out_file.write(f'{p_value},{val}\n')
+                    out_file.write(f'{p_value},{val},{vector}\n')
                     # close file test_name.csv
                     out_file.close()
         except ValueError:
@@ -103,7 +103,7 @@ def extract_first_batch():
         # Open filename 3,3-cVAL-v2-0-0.txt at path
         in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
 
-        file_processing(in_file)
+        file_processing(in_file, val, (3, 3))
     in_file.close()
 
 
@@ -114,13 +114,13 @@ def extract_second_batch():
         # Open filename x,y-c3750-v2-0-0.txt at path
         in_file = open(path + f'{x},{y}-c3750-v2-0-0.txt', 'r')
 
-        file_processing(in_file)
+        file_processing(in_file, 3750, (x, y))
     in_file.close()
 
 def main():
     # create_files()
     # testing_file(3750)
-    # extract_first_batch()
+    extract_first_batch()
     pass
 
 
