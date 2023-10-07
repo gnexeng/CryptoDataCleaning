@@ -10,9 +10,9 @@
 # Second batch: f-vector (4,5) -> (103-203) applying coning 3750 times
 # file structure: 4,5-c3750-v2-0-0.txt  --->  103,203-c3750-v2-0-0.txt
 
+import os
 
-path = 'C:\\Users\\gnexe\\PycharmProjects\\CryptoDataCleaning\\coning-analysis\\with-v2.0-fixes\\'
-# path = './coning-analysis/with-v2.0-fixes/'
+project_dir = os.path.dirname(os.path.realpath('__file__'))
 tests = ['Frequency',
          'BlockFrequency',
          'CumulativeSums',
@@ -42,6 +42,13 @@ def create_list_f_vectors(x: int, y: int, total: int):
     return f_vectors
 
 
+def create_files(mod=""):
+    for val in tests:
+        extension = '.csv'
+        file = open(f'{val}-{mod}{extension}', 'w')
+        file.close()
+
+
 def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_modifier=''):
     # For each line:
     for line in file_name:
@@ -64,31 +71,43 @@ def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_
 
 
 def extract_coning_test(local_dir_name='3-3-3750-3849'):
-    global path
+    #global path
     # for each value VAL between 3750 - 3849
     for val in range(3750, 3850):
         # Open filename 3,3-cVAL-v2-0-0.txt at path
-        in_file = open(path + f'3,3-c{val}-v2-0-0.txt', 'r')
+        file_name = f'3,3-c{val}-v2-0-0.txt'
+        path = os.path.dirname(os.path.realpath(file_name))
+        in_file = open(path, 'r')
         file_processing(in_file, val=val, vector=(3, 3), out_file_name_modifier='coning',
                         out_path_modifier=f'\\{local_dir_name}\\')
         in_file.close()
 
 
 def extract_vectors_test(local_dir_name='4-5-103-203-3750'):
-    global path
+    #global path
     # for each f-vector between (4,5) ---> (103,203)
     f_vectors = create_list_f_vectors(4, 5, 100)
     for x, y in f_vectors:
         # Open filename x,y-c3750-v2-0-0.txt at path
-        in_file = open(path + f'{x},{y}-c3750-v2-0-0.txt', 'r')
+        file_name = f'{x},{y}-c3750-v2-0-0.txt'
+        path = os.path.dirname(os.path.realpath(file_name))
+        in_file = open(path, 'r')
         file_processing(in_file, val=3750, vector=(x, y), out_file_name_modifier='vectors',
                         out_path_modifier=f'\\{local_dir_name}\\')
         in_file.close()
 
 
 def main():
-    extract_coning_test()
-    extract_vectors_test()
+    global project_dir
+    # Testing os for relative path
+    out_file_dir = os.path.join(project_dir, '4-5-103-203-3750/ApproximateEntropy-vectors.csv')
+
+
+    print(out_file_dir)
+
+
+    #extract_coning_test()
+    #extract_vectors_test()
     pass
 
 
