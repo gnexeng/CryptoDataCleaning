@@ -12,7 +12,7 @@
 
 import os
 
-project_dir = os.path.dirname(os.path.realpath('__file__'))
+project_dir = os.path.dirname(os.path.realpath('__file__'))  # to get os path name to project top level dir
 tests = ['Frequency',
          'BlockFrequency',
          'CumulativeSums',
@@ -49,7 +49,9 @@ def create_files(mod=""):
         file.close()
 
 
-def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_modifier=''):
+def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_dir=''):
+    global project_dir
+    global tests
     # For each line:
     for line in file_name:
         #    split line at spaces
@@ -60,8 +62,9 @@ def file_processing(file_name, val, vector, out_file_name_modifier='', out_path_
                 test_name = line.split(' ')[-1].strip()  # extract the name of test for this p_value
                 # open file test_name.csv
                 if test_name in tests:
-                    # In windows must add \\ to path names
-                    out_file = open(f'{out_path_modifier}{test_name}-{out_file_name_modifier}.csv', 'a')
+                    # open file to append results extracted
+                    out_dir_path = os.path.join(project_dir, f'{out_path_dir}/{test_name}-{out_file_name_modifier}')
+                    out_file = open(out_dir_path, 'a')
                     # append pair VAL, p-value to filename test_name.csv
                     out_file.write(f'{p_value},{val},{vector}\n')
                     # close file test_name.csv
@@ -78,8 +81,8 @@ def extract_coning_test(out_dir='3-3-3750-3849'):
         file_name = f'3,3-c{val}-v2-0-0.txt'
         in_path = os.path.join(project_dir, f'coning-analysis/with-v2.0-fixes/{file_name}')
         in_file = open(in_path, 'r')
-        file_processing(in_file, val=val, vector=(3, 3), out_file_name_modifier='coning',
-                        out_path_modifier=out_dir)
+        file_processing(in_file, val=val, vector=(3, 3), out_file_name_modifier='coning.csv',
+                        out_path_dir=out_dir)
         in_file.close()
 
 
@@ -92,8 +95,8 @@ def extract_vectors_test(out_dir='4-5-103-203-3750'):
         file_name = f'{x},{y}-c3750-v2-0-0.txt'
         in_path = os.path.join(project_dir, f'coning-analysis/with-v2.0-fixes/{file_name}')
         in_file = open(in_path, 'r')
-        file_processing(in_file, val=3750, vector=(x, y), out_file_name_modifier='vectors',
-                        out_path_modifier=out_dir)
+        file_processing(in_file, val=3750, vector=(x, y), out_file_name_modifier='vectors.csv',
+                        out_path_dir=out_dir)
         in_file.close()
 
 
@@ -104,8 +107,8 @@ def main():
     # print(out_file_dir)
 
 
-    #extract_coning_test()
-    #extract_vectors_test()
+    extract_coning_test()
+    extract_vectors_test()
     pass
 
 
