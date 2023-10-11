@@ -884,7 +884,7 @@ We explored the effect of symmetry in h-vectors on the resulting dual f-vectors.
 
 A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a p-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph. The sparklines represent the trend of all NIST tests, which if close to 0.0 or 1.0 would look like a flatline. 
 
-For the first experiment we fix the h-vector length at 3751, with a pattern of all 1's, and vary the number of coning operations from 0 to 99 times.~\ref{fig:conings}  %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b' 
+For the first experiment we fix the h-vector length at 3751, with a pattern of all 1's, and vary the number of coning operations from 0 to 99 times. (see Figure~\ref{fig:conings})  %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b' 
 For the second experiment we vary the h-vector length from 3750 to 3849, with a pattern of all 1's, and we do not apply the coning operation.~\ref{fig:lengths}   %  '-p 3750 -f -b' through '-p 3849 -f -b'
 For the third experiment we fix the h-vector length at 3750, vary non-end elements in the pattern from 1 to 100, and do no apply the coning operation.~\ref{fig:patterns}  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
 
@@ -893,35 +893,43 @@ The time required to do this using a naive implementation on a modern consumer C
 % RESULTS CHARTS HERE
 % add link to repo for varying conings
 
-
-\begin{figure}[!htb]
-\newcommand{\captionabove}[2][]{%
-    \vskip-\abovecaptionskip
-    \vskip+\belowcaptionskip
-    \ifx\@nnil#1\@nnil
-        \caption{#2}%
-    \else
-        \caption[#1]{#2}%
-    \fi
-    \vskip+\abovecaptionskip
-    \vskip-\belowcaptionskip
-}
-
- \centering
- \captionabove{Trendlines for exeriments with varying conings from 0-99 times (left), varying h-vector lengths from 3750-3849 (mid) and varying patterns for h-vector length of 3750 and non-end elements from 1-100 (right).}%
- \label{fig:images}
- \subfloat[left]{%
-      \includegraphics[width=0.18\linewidth]{./charts/varying-conings-v2.png}}
-      \label{fig:conings}
- \qquad
- \subfloat[mid]{%
-      \includegraphics[width=0.18\linewidth]{./charts/varying-lengths-v2.png}}
-      \label{fig:lengths}
- \qquad
- \subfloat[right]{%
-      \includegraphics[width=0.18\linewidth]{./charts/varying-patterns-v2.png}}
-      \label{fig:patterns}
+\begin{figure}[h!]
+\centering
+\caption{100 trendlines for NIST tests p-values after applying between 0 and 99 coning operations on a vector of length 3751, with a pattern of all 1's} 
+\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-conings-v2.png}
+\label{fig:conings}
 \end{figure}
+
+\begin{figure}[h!]
+\centering
+\caption{100 trendlines for NIST tests p-values on vectors of lengths between 3750 and 3849 with a pattern of all 1's}
+\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-lengths-v2.png}
+\label{fig:lengths}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\caption{100 trendlines for NIST tests p-values on vectors of length 3750 with non-end elements from 1 to 100.}
+\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-patterns-v2.png}
+\label{fig:patterns}
+\end{figure}
+
+
+% \centering
+% \caption{Trendlines for exeriments with varying conings from 0-99 times (left), varying h-vector lengths from 3750-3849 (mid) and varying patterns for h-vector length of 3750 and non-end elements from 1-100 (right).}%
+% \label{fig:images}
+% \subfloat[left]{%
+%      \includegraphics[width=0.18\linewidth]{./charts/varying-conings-v2.png}}
+%      \label{fig:conings}
+% \qquad
+% \subfloat[mid]{%
+%      \includegraphics[width=0.18\linewidth]{./charts/varying-lengths-v2.png}}
+%      \label{fig:lengths}
+% \qquad
+% \subfloat[right]{%
+%      \includegraphics[width=0.18\linewidth]{./charts/varying-patterns-v2.png}}
+%      \label{fig:patterns}
+%\end{figure}
 
 %\begin{figure}[!htb]
 %\centering %
