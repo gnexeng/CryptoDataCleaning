@@ -1,5 +1,5 @@
 \documentclass[oneside,12pt]{amsart}
-\usepackage{amsthm,amsmath,amsfonts,amssymb,color, enumerate,tikz, hyperref, algpseudocode, amscd, url}
+\usepackage{amsthm,amsmath,amsfonts,amssymb,color, enumerate,tikz, hyperref, algpseudocode, amscd, url, graphicx, floatrow, subfig, float}
 \usepackage[all]{xy}
 
 % THEOREM Environments ---------------------------------------------------
@@ -861,8 +861,8 @@ In the current implementation used in this paper this bug has been fixed.
 
 
 
-\textbf{Coning operation}
-
+%\textbf{Coning operation}
+\newpage
 \section{Results} \label{results}
 
 % We include two sets of probability-distribution graphs in this section. 
@@ -873,12 +873,71 @@ In the current implementation used in this paper this bug has been fixed.
 
 % The first set of 12 graphs therefore shows the results of running the NIST test suite's 12 major tests on 100 different data sets 
 
+%Rerunning experiments using version 2.0 of the code.
+We explored the effect of symmetry in h-vectors on the resulting dual f-vectors. To this end, we ran three sets of experiments as follows: 
+\begin{enumerate}
+\item Create an h-vector with obvious symmetry (e.g., all 1's)
+\item Compute the dual f-vector of the h-vector
+\item Cone the resulting f-vector zero or more times
+\item Run the resulting bit pattern through the NIST test suite
+\end{enumerate}
+
+A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a p-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph. The sparklines represent the trend of all NIST tests, which if close to 0.0 or 1.0 would look like a flatline. 
+
+For the first experiment we fix the h-vector length at 3751, with a pattern of all 1's, and vary the number of coning operations from 0 to 99 times.~\ref{fig:conings}  %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b' 
+For the second experiment we vary the h-vector length from 3750 to 3849, with a pattern of all 1's, and we do not apply the coning operation.~\ref{fig:lengths}   %  '-p 3750 -f -b' through '-p 3849 -f -b'
+For the third experiment we fix the h-vector length at 3750, vary non-end elements in the pattern from 1 to 100, and do no apply the coning operation.~\ref{fig:patterns}  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
+
+The time required to do this using a naive implementation on a modern consumer CPU (Intel Core i5-4590) is 2.3 seconds. This is therefore a gross upper bound.
+
+% RESULTS CHARTS HERE
+% add link to repo for varying conings
 
 
+\begin{figure}[!htb]
+\newcommand{\captionabove}[2][]{%
+    \vskip-\abovecaptionskip
+    \vskip+\belowcaptionskip
+    \ifx\@nnil#1\@nnil
+        \caption{#2}%
+    \else
+        \caption[#1]{#2}%
+    \fi
+    \vskip+\abovecaptionskip
+    \vskip-\belowcaptionskip
+}
 
-\textcolor{red}{
-Summarize the results for the tests that have been run.  Be sure to mention the machine the tests were run on and the runtimes.  Any graphs describing the runtime etc. would be helpful. Point the reader to Github etc. for the complete suite of test runs etc.}
+ \centering
+ \captionabove{Trendlines for exeriments with varying conings from 0-99 times (left), varying h-vector lengths from 3750-3849 (mid) and varying patterns for h-vector length of 3750 and non-end elements from 1-100 (right).}%
+ \label{fig:images}
+ \subfloat[left]{%
+      \includegraphics[width=0.18\linewidth]{./charts/varying-conings-v2.png}}
+      \label{fig:conings}
+ \qquad
+ \subfloat[mid]{%
+      \includegraphics[width=0.18\linewidth]{./charts/varying-lengths-v2.png}}
+      \label{fig:lengths}
+ \qquad
+ \subfloat[right]{%
+      \includegraphics[width=0.18\linewidth]{./charts/varying-patterns-v2.png}}
+      \label{fig:patterns}
+\end{figure}
 
+%\begin{figure}[!htb]
+%\centering %
+%\floatsetup{floatrowsep=qquad}
+%\begin{floatrow}[3]%
+%\ffigbox[\FBwidth]{\caption{varying conings}\label{fig:conings}}{\includegraphics[width=.2\textwidth]{./charts/varying-conings-v2.png}}
+%\ffigbox[\FBwidth]{\caption{varying lengths}\label{fig:lengths}}{\includegraphics[width=.2\textwidth]{./charts/varying-lengths-v2.png}}
+%\ffigbox[\FBwidth]{\caption{varying patterns}\label{fig:patterns}}{\includegraphics[width=.2\textwidth]{./charts/varying-patterns-v2.png}}
+%\end{floatrow}
+%\end{figure}
+
+
+%\textcolor{red}{
+%Summarize the results for the tests that have been run.  Be sure to mention the machine the tests were run on and the runtimes.  Any graphs describing the runtime etc. would be helpful. Point the reader to Github etc. for the complete suite of test runs etc.}
+
+\clearpage
 \section{Appendix} \label{appendix}
 
 %\textcolor{red}{
@@ -998,385 +1057,386 @@ Technology (pp. 331-342). Uppsala, Sweden: ACM. doi:10.1145/1951365.1951406  (20
 \end{document}%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
-We argue by contradiction.  Suppose $K^{j+2}$ is dual to a $j+3$ dimensional simple convex polytope $P$, then the vertices of $K^{j+2}$ are the codimension one faces of $P$ and proceeding with the dualization; we determine that the simplicies of maximal dimension in $K^{j+2}$ correspond to the vertices of $P$.  Since $f_0(P)$ is the number of vertices of $P$, it follows that $f_0(P) = f_1(R_G)$ by Lemma \ref{f vector cone}.  If the $g$-Theorem were true then the inequality
-
-
-$$f_0(P) \geq j+4$$\\
-
-must hold (\cite{BP1} pg. 16 Example 1.30).  However, $f_1(R_G)$ is fixed and $j$ is sufficiently large.  We arrive at a contradiction and the result follows.
-
-Before we conclude this section, we define an operation between simplicial complexes which will be important for us later. Let $\mathcal{S}$ be the set of simplicial complexes of finite dimension.
-
-\begin{Definition}\label{operation}
-Given $\mathcal{S}$, an operation $\theta$ is a function  $\theta:\mathcal{S}  \to \mathcal{S}$.
-\end{Definition}
-
-We observe that $\theta$ takes as input a simplicial complex and assigns to it a simplicial complex.  There is no requirement on the dimension, nor are there any requirements that simplicies map to simplicies.  That is, we do not require $\theta$ to be a simplicial map.  We take note that those operations for which $\theta(\mathcal{K}) = \mathcal{K}$ are called \textit{trivial operations}. We now give examples of operations:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-We refer to \cite{B} page 44 and start with the definition of a \textit{convex polytope} which is the convex hull of finitely many points in some Euclidean space (compare with \cite{BP1} pg. 7). Suppose $P$ = convex hull of $\{x_1,....,x_k\}$ with $x_i \in \mathbb{R}^j$ then the \textit{dimension of P} is $k$.  In $\mathbb{R}^2$, consider the halfspace:
-
-\begin{center}
-$H_{(x,r)} = \{y \in \mathbb{R}^2 \; | \langle x,y \rangle \geq r \}$.
-\end{center}
-
-Here, the $r$ is a fixed real number and $x$ is a fixed vector.  So, the halfspace consists of all of those vectors $y$ where the inner product
-satisfies the inequality $\langle x,y \rangle \geq r$.  To illustrate, consider the following case
-
-\begin{Example}
-Let $x = (1,0)$ and $r = 2$, then
-\begin{center}
-$H_{(x,2)} = \{(y_1,y_2) \; | y_1 \geq 2 \}$
-\end{center}
-
-\textcolor{red}{Insert picture here for this case}
-
-\end{Example}https://www.overleaf.com/project/6027e328b116736fc4a191d7
-
-
-
-provides an explicit method to construct
-simplicial complexes that are not \textit{simple convex polytopes}.  To prove this we explicitly relate the face structure of the underlying random
-graph to the dimension of the ``grown" complex via the construction in \cite{ALDH}.  From here, we analyze certain inequalities that result from
-the g-Theorem.  Finally, we show that for a sufficiently large number of iterations of our constrcution, the resulting simplicial complex is dual
-to a polyhedron that is \textbf{not} a simple convex polytope.  Inequalities describing this outcome are derived and used in the testing regime.
-
-\indent As an application, the derived inequalities are used to control the simlpicial complexes we wish to construct and test.  Namely,
-in specific dimensions the generated simplcial complexes are known to be dual to polyhedra that are in fact simple convex polytopes and these
-polyhedra have h-vectors that exhibit a high degree of symmetry given by the Dehn-sommerville relations ($h_i = h_{n-i})$ where the parameter
-$n$ depends on the dimension of the polytope and the number of times the construction is iterated.  The implication is that
-the dual complex also exhibits a certain symmetry as encoded by its $f-vector$ (since the $h$ and $f$ vectors determine each other).
-Most importantly, from a testing perspective, the complexes generated from this process appear to be random from the NIST testing suite.
-As such, the tests in \cite{NIST} fail to detect the patterns expressed by the g-Theorem.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-We have the following concerning lower bounds.
-
-\begin{Theorem}\label{lower boud}
-Given $R_G$ and a positive integer $j$ sufficiently large, then $C^{j+1}(R_G)$ is not a $j+2$ simplicial polytope.
-\end{Theorem}
-
-\begin{proof}
-Let $R_G$ be a fixed random graph with $f_0(R_G) = m$.  We first observe that the dimension of $C^{j+1}(R_G)$ is $j+2$ and we assume it is $j+2$ simplicial.  By \cite{BP1} pg. 19 Theorem 1.37
-then the following inequality must hold
-
-\begin{center}
-
-$f_{j+1}(C^{j+1}(R_G) \geq (j+1)f_0(C^{j+1}(R_G)) - (j+3)(j)$\\
-
-\end{center}
-
-By Lemma \ref{f vector cone} we obtain the inequality
-
-\begin{center}
-$f_1(R_G) \geq (j+1)(m+j+1)  - (j+3)(j)$\\
-\end{center}
-
-By algebra we obtain the inequality
-
-\begin{center}
-$f_1(R_G) - m - 1  \geq j(m-1) $\\
-\end{center}
-
-Since $f_1(R_G)$ and $m$ are fixed we obtain a contradiction.  Hence, $C^{j+1}(R_G)$ is not a $j+2$ simplicial polytope.
-
-\end{proof}
-
-
-\begin{Remark}
-In Theorem \ref{lower bound} the random graph is not dualized to produce a polytope.  In fact, in the statement
-the components, $f_i$ of the f-vector measures the number of $i$ dimensional faces.
-
-\end{Remark}
-
-
-
-
-
-
-
-
-
-
-\author[D. Allen]{David Allen}
-\address{Department of Mathematics BMCC, CUNY, New York, New York 10007}
-\email{dtallen@bmcc.cuny.edu}
-
-\author[J. La Luz]{Jos\'{e} La Luz}
-\address{Departmento de Matem\'aticas, Universidad de Puerto Rico,
-Industrial Minillas 170 Car 174, Bayam\'on, PR, 00959-1919}
-\email{jose.laluz1@upr.edu }
-
-\author[G. Salivia]{Guarionex Salivia}
-\address{Department of Computer Science, Minnesota state University, Mankato,
-South Rd and Ellis Ave, Mankato, MN 56001}
-\email{gnexeng@gmail.com}
-
-\author[J. Hardwick]{Jonathan Hardwick}
-\address{Department of Computer Science, Minnesota state University, Mankato,
-South Rd and Ellis Ave, Mankato, MN 56001}
-\email{jonathan.hardwick@gmail.com}
-
-
-
-
-
-
-
-
-
-
-
-Let $\mathcal{K}_{n}$ be the set of $n$-dimensional simplicies of $\mathcal{K}$.  For $n \geq 0$, let $(\mathcal{K} \ast \mathcal{L})_n$
-denote the $n$-dimensional simplicies in  $\mathcal{K} \ast \mathcal{L}$.  We have the following decomposition
-using the join:
-
-\vspace{.1in}
-$(\mathcal{K} \ast \mathcal{L})_n = \mathcal{K}_n  \cup \mathcal{L}_n \cup (\mathcal{K}_{n-1} \ast \mathcal{L}_0) \cup (\mathcal{K}_{n-2} \ast \mathcal{L}_1) \cup \cdot \cdot \cdot \cup (\mathcal{K}_0 \ast \mathcal{L}_{n-1})$
-
-
-Of particular interest is the case of computing the $f$-vector of the $k$-join of $\Delta^n$ with $R_G$.  For computational
- purposes we write the join recursively as $(\Delta_1^n \ast (\Delta_2^n \ast \cdots\ast  \Delta_k^n) \ast R_G)$.  To compute the
- $f$-vector it will suffice to apply Lemma \ref{p join calculation}.
-
-\begin{Theorem}
-$$f_j(\Delta_1^n \ast (\Delta_2^n \ast \cdots \ast  \Delta_k^n) \ast R_G) =$$
-$$ f_j(\Delta_1^n) + f_j((\Delta_2^n \ast \cdots \ast  \Delta_k^n) \ast R_G)) + \sum_{k= 0}^{j-1}f_K(\Delta_1^n)f_{j-1-k}((\Delta_2^n \ast \cdots \ast  \Delta_k^n) \ast R_G))$$
-\end{Theorem}
-
-
-\textcolor{red}{Redo the next example there is a third component.  There is an $f_3$ on each term}
-\begin{Example}
-To illustrate, we compute the third component of the f-vector for the $k = 3$ join with the notational convention $\Delta^n = \Delta$
-\begin{align*}
-f_3((\Delta \ast (\Delta \ast \Delta \ast R_G))) &= f_3(\Delta) + f_3(\Delta \ast \Delta \ast R_G) \\
-& + f_0(\Delta)f_2(\Delta \ast \Delta \ast R_G)  \\
-&+f_1(\Delta)f_1(\Delta \ast \Delta \ast R_G) \\
-&+f_2(\Delta)f_0(\Delta \ast \Delta \ast R_G)
-\end{align*}\\
-
-We can continue to expand the terms.  For example, in the above
-
-\begin{align*}
-f_3(\Delta \ast \Delta \ast R_G) &= f_3(\Delta) + f_3(\Delta \ast R_G) \\
-& + f_0(\Delta)f_2(\Delta \ast R_G)  \\
-&+f_1(\Delta)f_1(\Delta \ast  R_G) \\
-&+f_2(\Delta)f_0(\Delta \ast  R_G)
-\end{align*}\\
-
-For illustrative purposes we expand the term $f_3 (\Delta \ast R_G)$ in the equation above noting that
-$f_2(R_G) = 0$
-
-  \begin{align*}
-f_3(\Delta \ast R_G) &= f_3(\Delta) + f_1(\Delta)f_1(R_G)  +f_2(\Delta)f_0(R_G)
-\end{align*}\\
-\end{Example}
-
- Each product in the sum encodes all possible ways a certain simplex can be constructed and the count comes from the multiplication principle.
-
-
-
-
-
-
-
-
-Let $f_0= m$ be the number of vertices of the random graph $R_G$ and assume without loss of generality that $f_1 \neq 0 $.  Recall, $n$
-is the number of times the cone is formed.  From
-\cite{BP1} pg. 16, Theorem 1.29 part (c) the following inequality must hold if the f-vector is realized by a simple $n$-polytope:
-$f_1 \leq \binom{f_0}{2}$.  The first component of the $f$ vector corresponding to $C^n(R_G)$ has terms:  $nm + f_1 + x$ where $x$ is a term
-that is derived recursively.  To obtain a gross lower bound and to simplify the calculation we assume that $x$ is zero (which it is not).  With the restrictions on the components of the $f$-vector stated above, we obtain the inequality
-$nm + f_1 \leq m(m-2)$.  After combining terms, performing some basic algebra and equating coefficients we determine the inequality
-holds if $n+2 \leq m$ and the result follows.  The case $f_1 =0$ (i.e., $R_G$ is the disjoint union of $m$ vertices) follows trivially
-using a simplified version of the argument above.
-
-
-
-\section{Algorithm}
-Let us recall the main idea behind the one-time pad.  Given a message $m_l$ of length $l$ to encode, a sequence of random integers $a_1,\ldots,a_l$ is generated.  Each letter is encoded using the sum with an integer from the list $a_1,\ldots,a_l$.  The encoded message takes the form: $\widetilde{a}_1 + \widetilde{a}_1,...., \widetilde{a}_l + \widetilde{a}_l$. This message is sent to the receiver along with the key.  Observe that the key is the same length as the message and both, must be transferred to the receiver.  Once received, the message can be decoded by simply subtracting out the appropriate integer in the key.  It is also the case that a one-time pad encrypts by working over $\mathbb{Z}_2$.  In this case the ciphertext is decoded by summing it with the key.  Of course, each random integer in the list is used once and only once. It is well-known that the one-time pad is secure.
-
-We will mimic the main idea behind a one-time pad using combinatorial methods.  However, our algorithm exhibits a degree of compression that is lacking in the one-time pad.  For example, the algorithm requires the transfer of a key whose length is smaller than the length of the encoded message.  Furthermore, the proposed algorithm allows for publishing operations (elaborate on the public
-key notions later...)
-
-In this section we will describe the algorithm that will be used to generate an encryption key.  \\
-\begin{enumerate}
-\item  Randomly select an integer $m$ and a point $p$ in the interval $(0,1)$.\\
-\item  Generate an Erdos-Renyi random graph $G(m,p)= G$. \\
-\item Let $M_{G}$ be the associated adjacency matrix.  \\
-\item If the number of non-zero entries in the matrix are less than the length of the message, then encode the entries in the matrix  $M_{G}$ using a secure method such as a one-time pad and send to the receiver.  If not, then go to step one and repeat. (At this stage the receiver has received the encoded entries in the matrix, which will then be used to construct the one dimensional simplicial complex). \\
-\item  Choose an operation $\theta$ and a big enough integer $n$.\\
-\item  Compute $\overrightarrow{f}(\theta(K(G))) = (f_0(\theta^{n}(K(G))),....,f_t(\theta^{n}(K(G))))$. If $t$ is less than the length of the message, then encode the message up to length $t$ and repeat the process for the next part of the message or repeat the process by going to step one.  If $ t  > l$, then proceed to the next step.\\
-\item Encode the message using the vector in the previous step.  That is, if the message of length $l$ is of the form $a_1,...,a_l$, then encode
-via $$a_1 + f_0(\theta^{n}(K(G))),....,a_l + f_t(\theta^{n}(K(G)))$$
-\item Send the encoded message to the receiver.\\
-\item  Receiver decodes $M_G$ and reconstructs $K(G)$ from the matrix $M_G$.\\
-\item  Receiver generates a graph using the published the chosen operation $\theta$ and $n$.\\
-\item  Receiver computes $\overrightarrow{f}$ of the resulting graph as in step 6. \\
-\item  Decode the encoded message in a fashion similar to a one-time pad.  \\
-\end{enumerate}
-
-
-
-
-\section{Results}
-
-
-%%%%%%%%JOIN STUFF%%%%
-An operation of particular interest is the join \cite{BP1} but first we have to make the following definition.
-\begin{Definition}
-Let $\mathcal{K},\mathcal{L}$ be simplicial complexes. The join of $\mathcal{K}$ and $\mathcal{L}$, denoted by $\mathcal{K}\ast\mathcal{L}$, is the simplicial complex defined as follows:
-
-$$\mathcal{K}\ast\mathcal{L}=\{x_1\cup x_2|x_1\in \mathcal{K},x_2\in\mathcal{L}\}$$.
-\end{Definition}
-
-We record the following obvious properties of the join:  it is associative and commutative.
-
-Notice that in the case that $\mathcal{L}$ is a point, then the join $\mathcal{K}\ast\mathcal{L}$ reduces to the cone over $\mathcal{K}$.
-
-We use the joint to define an operation:
-
-\begin{Example}
-For a given fixed simplicial complex $\mathcal{L}$, the \textit{k-join of $\mathcal{K}$ with $\mathcal{L}$} is the operation defined and denoted as follows:
-
-   $$\mathcal{L}_{k}(\mathcal{K})= \underbrace{\mathcal{L}\ast \cdots \ast\mathcal{L} }_{\text{$k$ times}} \ast \mathcal{K}$$
-\end{Example}
-
-The reader will notice the lack of parenthetical descriptors within the definition.  Bookkeeping of this type is unnecessary for this operation since the join is associative. We will primarily focus on this operation for very particular complexes.
-
-Recall the following calculation from \cite{BP1}. This result sheds some insight into how the components of the $f$-vector can be explicitly determined for simplicial complexes that are well-understood.
-
-\begin{Theorem}
-$f_i(\Delta^n) = \binom{n+1}{i+1}$  for $-1 \leq i \leq n$
-\end{Theorem}
-
-
-\begin{Lemma}\label{formula}
-For simplicial complexes $\mathcal{K}$ and $\mathcal{L}$
-\begin{equation}\label{e1}
-f_{q}(\mathcal{K}\ast\mathcal{L})=f_{q}(\mathcal{K})+f_{q}(\mathcal{L})+\sum_{i=0}^{q-1}f_{i}(\mathcal{K})f_{q-i}(\mathcal{L})
-\end{equation}
-\end{Lemma}
-
-\begin{proof}
-Let $\mathcal{K}_{q}$ be the set of $q$-dimensional simplicies of $\mathcal{K}$. By construction, if $z\in(\mathcal{K}\ast\mathcal{L})_{q}$ then we have one of these mutually exclusive cases:
-\begin{enumerate}
-\item $z=x_1\cup \emptyset$ where $x_1\in \mathcal{K}_q$, there are $f_q(\mathcal{K})$ elements of this kind\\
-\item $z=\emptyset\cup x_2$ where $x_2\in \mathcal{L}_q$, there are $f_q(\mathcal{L})$ elements of this kind\\
-\item $z=x_1\cup x_2$ where $x_1\in \mathcal{K}_{i}$ and $x_2\in \mathcal{L}_{q-i}$ and $i\ne q$, there are $f_i(\mathcal{K})f_{q-i}(\mathcal{L})$ elements of this kind.
-\end{enumerate}
-\noindent The result follows by adding these three kinds of sets.
-\end{proof}
-
-\begin{Lemma}
-Let $\mathcal{K}_{1},\mathcal{K}_{2},\mathcal{L}$ be simplicial complexes. Then
-
-$$\overrightarrow{f}(\mathcal{K}_{1})= \overrightarrow{f}(\mathcal{K}_{2})\quad \text{iff} \quad\overrightarrow{f}(\mathcal{K}_{1}\ast\mathcal{L})= \overrightarrow{f}(\mathcal{K}_{2}\ast\mathcal{L})$$
-\end{Lemma}
-\begin{proof}
-If $\overrightarrow{f}(\mathcal{K}_{1})= \overrightarrow{f}(\mathcal{K}_{2})$ then using formula (\ref{e1}) gives the result. If $\overrightarrow{f}(\mathcal{K}_{1}\ast\mathcal{L})= \overrightarrow{f}(\mathcal{K}_{2}\ast\mathcal{L})$ then using formula (\ref{e1}) we have
-
-$$f_{0}(\mathcal{K}_{1})+f_{0}(\mathcal{L})=f_{0}(\mathcal{K}_{1}\ast\mathcal{L})= f_{0}(\mathcal{K}_{2}\ast\mathcal{L})=f_{0}(\mathcal{K}_{2})+f_{0}(\mathcal{L})$$
-
-\noindent and from this it follows that $f_{0}(\mathcal{K}_{1})=f_{0}(\mathcal{K}_{2})$. From this and using formula (\ref{e1}) again we get $f_{1}(\mathcal{K}_{1})=f_{1}( \mathcal{K}_{2})$. Using this method we obtain $f_{k}(\mathcal{K}_{1})=f_{k}( \mathcal{K}_{2})$ for all $k$.
-\end{proof}
-
-
-
-\section{NIST Test Results}
-
-For the purposes of determining whether or not the algorithm described above is suitable for potential cryptographic
-applications we have run a series of tests using the testing suite \cite{NIST}.
-
-
-\indent We include two probability-distribution graphs here, summarizing the NIST suite's analysis of two data sets generated using the cone operation.
-
-The first series of tests consisted of building on the random graph with $f-vector$ \{3, 3\}.  The number of operations used to grow the
-graph ranged from 3750 to 3849.  The rationale behind working in this range is that NIST suite's requirement that it be given at least 10 megabits of input data.
-Graph -----------------------------insert graph-----------------------------summarizes one hundred runs of the complexes built out of the random graph mentioned
-above.
-
-\indent In subsequent testing, the random graph-input graph-was varied with the $f-vectors$ ranging from $\{3, 3\}$ to
-$\{102, 201\}$.  The number of cones was fixed at 3750-to produce the required sequence of bits to feed into the
-NIST testing suite.  The results are summarized in ---------------------------graph-----insert graph here------------------------
-
-
-
-
- Using the decomposition of higher dimensional simplicies as the union of the join of lower
-dimensional simplicies analyze the $p-join$.  Let $\mathcal{K}_1,...,\mathcal{K}_p$ be simplicial complexes and let $\mathcal{K}_1 \underbrace{\ast \ast \ast}_p \mathcal{K}_p$ be the $p$-join.
-We use the notation $(\mathcal{K}_1 \underbrace{\ast \ast \ast}_p  \mathcal{K}_p)_n$ to denote the $n$-simplicies in the $p$-join. \\
-
-
-
-%problems....
-\begin{Question}
-Compute $f_j(\mathcal{K}_1 \underbrace{\ast \ast \ast}_p \mathcal{K}_p)$ and write it in closed form.
-\end{Question}
-
+%WHAT IS THIS STUFF?
+%
+%
+%
+
+
+%
+%We argue by contradiction.  Suppose $K^{j+2}$ is dual to a $j+3$ dimensional simple convex polytope $P$, then the vertices of $K^{j+2}$ are the codimension one faces of $P$ and proceeding with the dualization; we determine that the simplicies of maximal dimension in $K^{j+2}$ correspond to the vertices of $P$.  Since $f_0(P)$ is the number of vertices of $P$, it follows that $f_0(P) = f_1(R_G)$ by Lemma \ref{f vector cone}.  If the $g$-Theorem were true then the inequality
+%
+%
+%$$f_0(P) \geq j+4$$\\
+%
+%must hold (\cite{BP1} pg. 16 Example 1.30).  However, $f_1(R_G)$ is fixed and $j$ is sufficiently large.  We arrive at a contradiction and the result follows.
+%
+%Before we conclude this section, we define an operation between simplicial complexes which will be important for us later. Let $\mathcal{S}$ be the set of simplicial complexes of finite dimension.
+%
+%\begin{Definition}\label{operation}
+%Given $\mathcal{S}$, an operation $\theta$ is a function  $\theta:\mathcal{S}  \to \mathcal{S}$.
+%\end{Definition}
+%
+%We observe that $\theta$ takes as input a simplicial complex and assigns to it a simplicial complex.  There is no requirement on the dimension, nor are there any requirements that simplicies map to simplicies.  That is, we do not require $\theta$ to be a simplicial map.  We take note that those operations for which $\theta(\mathcal{K}) = \mathcal{K}$ are called \textit{trivial operations}. We now give examples of operations:
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%We refer to \cite{B} page 44 and start with the definition of a \textit{convex polytope} which is the convex hull of finitely many points in some Euclidean space (compare with \cite{BP1} pg. 7). Suppose $P$ = convex hull of $\{x_1,....,x_k\}$ with $x_i \in \mathbb{R}^j$ then the \textit{dimension of P} is $k$.  In $\mathbb{R}^2$, consider the halfspace:
+%
+%\begin{center}
+%$H_{(x,r)} = \{y \in \mathbb{R}^2 \; | \langle x,y \rangle \geq r \}$.
+%\end{center}
+%
+%Here, the $r$ is a fixed real number and $x$ is a fixed vector.  So, the halfspace consists of all of those vectors $y$ where the inner product
+%satisfies the inequality $\langle x,y \rangle \geq r$.  To illustrate, consider the following case
+%
+%\begin{Example}
+%Let $x = (1,0)$ and $r = 2$, then
+%\begin{center}
+%$H_{(x,2)} = \{(y_1,y_2) \; | y_1 \geq 2 \}$
+%\end{center}
+%
+%\textcolor{red}{Insert picture here for this case}
+%
+%\end{Example}https://www.overleaf.com/project/6027e328b116736fc4a191d7
+%
+%
+%
+%provides an explicit method to construct
+%simplicial complexes that are not \textit{simple convex polytopes}.  To prove this we explicitly relate the face structure of the underlying random
+%graph to the dimension of the ``grown" complex via the construction in \cite{ALDH}.  From here, we analyze certain inequalities that result from
+%the g-Theorem.  Finally, we show that for a sufficiently large number of iterations of our constrcution, the resulting simplicial complex is dual
+%to a polyhedron that is \textbf{not} a simple convex polytope.  Inequalities describing this outcome are derived and used in the testing regime.
+%
+%\indent As an application, the derived inequalities are used to control the simlpicial complexes we wish to construct and test.  Namely,
+%in specific dimensions the generated simplcial complexes are known to be dual to polyhedra that are in fact simple convex polytopes and these
+%polyhedra have h-vectors that exhibit a high degree of symmetry given by the Dehn-sommerville relations ($h_i = h_{n-i})$ where the parameter
+%$n$ depends on the dimension of the polytope and the number of times the construction is iterated.  The implication is that
+%the dual complex also exhibits a certain symmetry as encoded by its $f-vector$ (since the $h$ and $f$ vectors determine each other).
+%Most importantly, from a testing perspective, the complexes generated from this process appear to be random from the NIST testing suite.
+%As such, the tests in \cite{NIST} fail to detect the patterns expressed by the g-Theorem.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%We have the following concerning lower bounds.
+%
+%\begin{Theorem}\label{lower boud}
+%Given $R_G$ and a positive integer $j$ sufficiently large, then $C^{j+1}(R_G)$ is not a $j+2$ simplicial polytope.
+%\end{Theorem}
+%
+%\begin{proof}
+%Let $R_G$ be a fixed random graph with $f_0(R_G) = m$.  We first observe that the dimension of $C^{j+1}(R_G)$ is $j+2$ and we assume it is $j+2$ simplicial.  By \cite{BP1} pg. 19 Theorem 1.37
+%then the following inequality must hold
+%
+%\begin{center}
+%
+%$f_{j+1}(C^{j+1}(R_G) \geq (j+1)f_0(C^{j+1}(R_G)) - (j+3)(j)$\\
+%
+%\end{center}
+%
+%By Lemma \ref{f vector cone} we obtain the inequality
+%
+%\begin{center}
+%$f_1(R_G) \geq (j+1)(m+j+1)  - (j+3)(j)$\\
+%\end{center}
+%
+%By algebra we obtain the inequality
+%
+%\begin{center}
+%$f_1(R_G) - m - 1  \geq j(m-1) $\\
+%\end{center}
+%
+%Since $f_1(R_G)$ and $m$ are fixed we obtain a contradiction.  Hence, $C^{j+1}(R_G)$ is not a $j+2$ simplicial polytope.
+%
+%\end{proof}
+%
+%
+%\begin{Remark}
+%In Theorem \ref{lower bound} the random graph is not dualized to produce a polytope.  In fact, in the statement
+%the components, $f_i$ of the f-vector measures the number of $i$ dimensional faces.
+%
+%\end{Remark}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\author[D. Allen]{David Allen}
+%\address{Department of Mathematics BMCC, CUNY, New York, New York 10007}
+%\email{dtallen@bmcc.cuny.edu}
+%
+%\author[J. La Luz]{Jos\'{e} La Luz}
+%\address{Departmento de Matem\'aticas, Universidad de Puerto Rico,
+%Industrial Minillas 170 Car 174, Bayam\'on, PR, 00959-1919}
+%\email{jose.laluz1@upr.edu }
+%
+%\author[G. Salivia]{Guarionex Salivia}
+%\address{Department of Computer Science, Minnesota state University, Mankato,
+%South Rd and Ellis Ave, Mankato, MN 56001}
+%\email{gnexeng@gmail.com}
+%
+%\author[J. Hardwick]{Jonathan Hardwick}
+%\address{Department of Computer Science, Minnesota state University, Mankato,
+%South Rd and Ellis Ave, Mankato, MN 56001}
+%\email{jonathan.hardwick@gmail.com}
+%
+%
+%
+%
+
+%
+%
+%
+%Let $\mathcal{K}_{n}$ be the set of $n$-dimensional simplicies of $\mathcal{K}$.  For $n \geq 0$, let $(\mathcal{K} \ast \mathcal{L})_n$
+%denote the $n$-dimensional simplicies in  $\mathcal{K} \ast \mathcal{L}$.  We have the following decomposition
+%using the join:
+%
+%\vspace{.1in}
+%$(\mathcal{K} \ast \mathcal{L})_n = \mathcal{K}_n  \cup \mathcal{L}_n \cup (\mathcal{K}_{n-1} \ast \mathcal{L}_0) \cup (\mathcal{K}_{n-2} \ast \mathcal{L}_1) \cup \cdot \cdot \cdot \cup (\mathcal{K}_0 \ast \mathcal{L}_{n-1})$
+%
+%
+%Of particular interest is the case of computing the $f$-vector of the $k$-join of $\Delta^n$ with $R_G$.  For computational
+% purposes we write the join recursively as $(\Delta_1^n \ast (\Delta_2^n \ast \cdots\ast  \Delta_k^n) \ast R_G)$.  To compute the
+% $f$-vector it will suffice to apply Lemma \ref{p join calculation}.
+%
+%\begin{Theorem}
+%$$f_j(\Delta_1^n \ast (\Delta_2^n \ast \cdots \ast  \Delta_k^n) \ast R_G) =$$
+%$$ f_j(\Delta_1^n) + f_j((\Delta_2^n \ast \cdots \ast  \Delta_k^n) \ast R_G)) + \sum_{k= 0}^{j-1}f_K(\Delta_1^n)f_{j-1-k}((\Delta_2^n \ast \cdots \ast  \Delta_k^n) \ast R_G))$$
+%\end{Theorem}
+%
+%
+%\textcolor{red}{Redo the next example there is a third component.  There is an $f_3$ on each term}
+%\begin{Example}
+%To illustrate, we compute the third component of the f-vector for the $k = 3$ join with the notational convention $\Delta^n = \Delta$
+%\begin{align*}
+%f_3((\Delta \ast (\Delta \ast \Delta \ast R_G))) &= f_3(\Delta) + f_3(\Delta \ast \Delta \ast R_G) \\
+%& + f_0(\Delta)f_2(\Delta \ast \Delta \ast R_G)  \\
+%&+f_1(\Delta)f_1(\Delta \ast \Delta \ast R_G) \\
+%&+f_2(\Delta)f_0(\Delta \ast \Delta \ast R_G)
+%\end{align*}\\
+%
+%We can continue to expand the terms.  For example, in the above
+%
+%\begin{align*}
+%f_3(\Delta \ast \Delta \ast R_G) &= f_3(\Delta) + f_3(\Delta \ast R_G) \\
+%& + f_0(\Delta)f_2(\Delta \ast R_G)  \\
+%&+f_1(\Delta)f_1(\Delta \ast  R_G) \\
+%&+f_2(\Delta)f_0(\Delta \ast  R_G)
+%\end{align*}\\
+%
+%For illustrative purposes we expand the term $f_3 (\Delta \ast R_G)$ in the equation above noting that
+%$f_2(R_G) = 0$
+%
+%  \begin{align*}
+%f_3(\Delta \ast R_G) &= f_3(\Delta) + f_1(\Delta)f_1(R_G)  +f_2(\Delta)f_0(R_G)
+%\end{align*}\\
+%\end{Example}
+%
+% Each product in the sum encodes all possible ways a certain simplex can be constructed and the count comes from the multiplication principle.
+%
+%
+%
+%
+%
+%
+%
+%
+%Let $f_0= m$ be the number of vertices of the random graph $R_G$ and assume without loss of generality that $f_1 \neq 0 $.  Recall, $n$
+%is the number of times the cone is formed.  From
+%\cite{BP1} pg. 16, Theorem 1.29 part (c) the following inequality must hold if the f-vector is realized by a simple $n$-polytope:
+%$f_1 \leq \binom{f_0}{2}$.  The first component of the $f$ vector corresponding to $C^n(R_G)$ has terms:  $nm + f_1 + x$ where $x$ is a term
+%that is derived recursively.  To obtain a gross lower bound and to simplify the calculation we assume that $x$ is zero (which it is not).  With the restrictions on the components of the $f$-vector stated above, we obtain the inequality
+%$nm + f_1 \leq m(m-2)$.  After combining terms, performing some basic algebra and equating coefficients we determine the inequality
+%holds if $n+2 \leq m$ and the result follows.  The case $f_1 =0$ (i.e., $R_G$ is the disjoint union of $m$ vertices) follows trivially
+%using a simplified version of the argument above.
+%
+%
+%
+%\section{Algorithm}
+%Let us recall the main idea behind the one-time pad.  Given a message $m_l$ of length $l$ to encode, a sequence of random integers $a_1,\ldots,a_l$ is generated.  Each letter is encoded using the sum with an integer from the list $a_1,\ldots,a_l$.  The encoded message takes the form: $\widetilde{a}_1 + \widetilde{a}_1,...., \widetilde{a}_l + \widetilde{a}_l$. This message is sent to the receiver along with the key.  Observe that the key is the same length as the message and both, must be transferred to the receiver.  Once received, the message can be decoded by simply subtracting out the appropriate integer in the key.  It is also the case that a one-time pad encrypts by working over $\mathbb{Z}_2$.  In this case the ciphertext is decoded by summing it with the key.  Of course, each random integer in the list is used once and only once. It is well-known that the one-time pad is secure.
+%
+%We will mimic the main idea behind a one-time pad using combinatorial methods.  However, our algorithm exhibits a degree of compression that is lacking in the one-time pad.  For example, the algorithm requires the transfer of a key whose length is smaller than the length of the encoded message.  Furthermore, the proposed algorithm allows for publishing operations (elaborate on the public
+%key notions later...)
+%
+%In this section we will describe the algorithm that will be used to generate an encryption key.  \\
+%\begin{enumerate}
+%\item  Randomly select an integer $m$ and a point $p$ in the interval $(0,1)$.\\
+%\item  Generate an Erdos-Renyi random graph $G(m,p)= G$. \\
+%\item Let $M_{G}$ be the associated adjacency matrix.  \\
+%\item If the number of non-zero entries in the matrix are less than the length of the message, then encode the entries in the matrix  $M_{G}$ using a secure method such as a one-time pad and send to the receiver.  If not, then go to step one and repeat. (At this stage the receiver has received the encoded entries in the matrix, which will then be used to construct the one dimensional simplicial complex). \\
+%\item  Choose an operation $\theta$ and a big enough integer $n$.\\
+%\item  Compute $\overrightarrow{f}(\theta(K(G))) = (f_0(\theta^{n}(K(G))),....,f_t(\theta^{n}(K(G))))$. If $t$ is less than the length of the message, then encode the message up to length $t$ and repeat the process for the next part of the message or repeat the process by going to step one.  If $ t  > l$, then proceed to the next step.\\
+%\item Encode the message using the vector in the previous step.  That is, if the message of length $l$ is of the form $a_1,...,a_l$, then encode
+%via $$a_1 + f_0(\theta^{n}(K(G))),....,a_l + f_t(\theta^{n}(K(G)))$$
+%\item Send the encoded message to the receiver.\\
+%\item  Receiver decodes $M_G$ and reconstructs $K(G)$ from the matrix $M_G$.\\
+%\item  Receiver generates a graph using the published the chosen operation $\theta$ and $n$.\\
+%\item  Receiver computes $\overrightarrow{f}$ of the resulting graph as in step 6. \\
+%\item  Decode the encoded message in a fashion similar to a one-time pad.  \\
+%\end{enumerate}
+%
+%
+%
+%
+%\section{Results}
+%
+%
+%%%%%%%%%JOIN STUFF%%%%
+%An operation of particular interest is the join \cite{BP1} but first we have to make the following definition.
+%\begin{Definition}
+%Let $\mathcal{K},\mathcal{L}$ be simplicial complexes. The join of $\mathcal{K}$ and $\mathcal{L}$, denoted by $\mathcal{K}\ast\mathcal{L}$, is the simplicial complex defined as follows:
+%
+%$$\mathcal{K}\ast\mathcal{L}=\{x_1\cup x_2|x_1\in \mathcal{K},x_2\in\mathcal{L}\}$$.
+%\end{Definition}
+%
+%We record the following obvious properties of the join:  it is associative and commutative.
+%
+%Notice that in the case that $\mathcal{L}$ is a point, then the join $\mathcal{K}\ast\mathcal{L}$ reduces to the cone over $\mathcal{K}$.
+%
+%We use the joint to define an operation:
+%
+%\begin{Example}
+%For a given fixed simplicial complex $\mathcal{L}$, the \textit{k-join of $\mathcal{K}$ with $\mathcal{L}$} is the operation defined and denoted as follows:
+%
+%   $$\mathcal{L}_{k}(\mathcal{K})= \underbrace{\mathcal{L}\ast \cdots \ast\mathcal{L} }_{\text{$k$ times}} \ast \mathcal{K}$$
+%\end{Example}
+%
+%The reader will notice the lack of parenthetical descriptors within the definition.  Bookkeeping of this type is unnecessary for this operation since the join is associative. We will primarily focus on this operation for very particular complexes.
+%
+%Recall the following calculation from \cite{BP1}. This result sheds some insight into how the components of the $f$-vector can be explicitly determined for simplicial complexes that are well-understood.
+%
+%\begin{Theorem}
+%$f_i(\Delta^n) = \binom{n+1}{i+1}$  for $-1 \leq i \leq n$
+%\end{Theorem}
+%
+%
+%\begin{Lemma}\label{formula}
+%For simplicial complexes $\mathcal{K}$ and $\mathcal{L}$
+%\begin{equation}\label{e1}
+%f_{q}(\mathcal{K}\ast\mathcal{L})=f_{q}(\mathcal{K})+f_{q}(\mathcal{L})+\sum_{i=0}^{q-1}f_{i}(\mathcal{K})f_{q-i}(\mathcal{L})
+%\end{equation}
+%\end{Lemma}
+%
+%\begin{proof}
+%Let $\mathcal{K}_{q}$ be the set of $q$-dimensional simplicies of $\mathcal{K}$. By construction, if $z\in(\mathcal{K}\ast\mathcal{L})_{q}$ then we have one of these mutually exclusive cases:
+%\begin{enumerate}
+%\item $z=x_1\cup \emptyset$ where $x_1\in \mathcal{K}_q$, there are $f_q(\mathcal{K})$ elements of this kind\\
+%\item $z=\emptyset\cup x_2$ where $x_2\in \mathcal{L}_q$, there are $f_q(\mathcal{L})$ elements of this kind\\
+%\item $z=x_1\cup x_2$ where $x_1\in \mathcal{K}_{i}$ and $x_2\in \mathcal{L}_{q-i}$ and $i\ne q$, there are $f_i(\mathcal{K})f_{q-i}(\mathcal{L})$ elements of this kind.
+%\end{enumerate}
+%\noindent The result follows by adding these three kinds of sets.
+%\end{proof}
+%
+%\begin{Lemma}
+%Let $\mathcal{K}_{1},\mathcal{K}_{2},\mathcal{L}$ be simplicial complexes. Then
+%
+%$$\overrightarrow{f}(\mathcal{K}_{1})= \overrightarrow{f}(\mathcal{K}_{2})\quad \text{iff} \quad\overrightarrow{f}(\mathcal{K}_{1}\ast\mathcal{L})= \overrightarrow{f}(\mathcal{K}_{2}\ast\mathcal{L})$$
+%\end{Lemma}
+%\begin{proof}
+%If $\overrightarrow{f}(\mathcal{K}_{1})= \overrightarrow{f}(\mathcal{K}_{2})$ then using formula (\ref{e1}) gives the result. If $\overrightarrow{f}(\mathcal{K}_{1}\ast\mathcal{L})= \overrightarrow{f}(\mathcal{K}_{2}\ast\mathcal{L})$ then using formula (\ref{e1}) we have
+%
+%$$f_{0}(\mathcal{K}_{1})+f_{0}(\mathcal{L})=f_{0}(\mathcal{K}_{1}\ast\mathcal{L})= f_{0}(\mathcal{K}_{2}\ast\mathcal{L})=f_{0}(\mathcal{K}_{2})+f_{0}(\mathcal{L})$$
+%
+%\noindent and from this it follows that $f_{0}(\mathcal{K}_{1})=f_{0}(\mathcal{K}_{2})$. From this and using formula (\ref{e1}) again we get $f_{1}(\mathcal{K}_{1})=f_{1}( \mathcal{K}_{2})$. Using this method we obtain $f_{k}(\mathcal{K}_{1})=f_{k}( \mathcal{K}_{2})$ for all $k$.
+%\end{proof}
+%
+%
+%
+%\section{NIST Test Results}
+%
+%For the purposes of determining whether or not the algorithm described above is suitable for potential cryptographic
+%applications we have run a series of tests using the testing suite \cite{NIST}.
+%
+%
+%\indent We include two probability-distribution graphs here, summarizing the NIST suite's analysis of two data sets generated using the cone operation.
+%
+%The first series of tests consisted of building on the random graph with $f-vector$ \{3, 3\}.  The number of operations used to grow the
+%graph ranged from 3750 to 3849.  The rationale behind working in this range is that NIST suite's requirement that it be given at least 10 megabits of input data.
+%Graph -----------------------------insert graph-----------------------------summarizes one hundred runs of the complexes built out of the random graph mentioned
+%above.
+%
+%\indent In subsequent testing, the random graph-input graph-was varied with the $f-vectors$ ranging from $\{3, 3\}$ to
+%$\{102, 201\}$.  The number of cones was fixed at 3750-to produce the required sequence of bits to feed into the
+%NIST testing suite.  The results are summarized in ---------------------------graph-----insert graph here------------------------
+%
+%
+%
+%
+% Using the decomposition of higher dimensional simplicies as the union of the join of lower
+%dimensional simplicies analyze the $p-join$.  Let $\mathcal{K}_1,...,\mathcal{K}_p$ be simplicial complexes and let $\mathcal{K}_1 \underbrace{\ast \ast \ast}_p \mathcal{K}_p$ be the $p$-join.
+%We use the notation $(\mathcal{K}_1 \underbrace{\ast \ast \ast}_p  \mathcal{K}_p)_n$ to denote the $n$-simplicies in the $p$-join. \\
+%
+%
+%
+%%problems....
 %\begin{Question}
-%Using Theorem \ref{Calculation} run the algorithm through the NIST testing suite.  Here there is an additional parameter ($\Delta^n$ with this $n$ not to be confused with the ``n"
-%that is used in the cone) so there are families of polyhedra that can generate sequences of bits.
-
-
-
-
-Given a fixed random graph $R_G$ let $f_0(G) = s$ and $f_1(G) = t$.  We argue by contradiction.  Suppose for $j$ sufficiently large each $\mathcal{K}^{j+2}$ is dual to a $(j+3)$-dimensional polytope $P$ that satisfies the $g$-theorem.  Recall, $f_0(P)$ enumerates the number of facets and $f_1(P)$ enumerates the number of codimension two faces.  Since the facets are dual to the vertices in $\mathcal{K}^{j+2}$ there are $s + j$ many implying $f_0(P) = s + j$.  On the other hand, since the codimension two faces of $P$ are dual to the edges in the dual simplicial complex we obtain $f_1(P) = f_1(C^j(G))$, but this is $t + s + (s+1) +(s+2) + \cdots (s + (j-1))$ by Corollary \ref{recursion}. We re-write this sum as
-
-\begin{center}
-$t + s + \underbrace{s+ \cdots+ s}_{j-1} + [1 + \cdots+ (j-1)]$
-\end{center}
-
-This sum is:  $t +sj+j^2 - j$ and we have
-
-\begin{center}
-$f_1(P) = t +sj+j^2 - j$
-\end{center}
-
-Since we assume the $g$-theorem holds the following inequality must hold:  $f_1 \leq\binom{f_0}{2}$ and this gives the following inequality
-
-$$t +sj+j^2 - j \leq \binom{s+j}{2}$$
-
-Simplifying this inequality yields the following:
-
-$$2t + j^2-j \leq s^2-s$$
-
-We arrive at a contradiction since $s$ and $t$ are fixed.
-
-
+%Compute $f_j(\mathcal{K}_1 \underbrace{\ast \ast \ast}_p \mathcal{K}_p)$ and write it in closed form.
 %\end{Question}
+%
+%%\begin{Question}
+%%Using Theorem \ref{Calculation} run the algorithm through the NIST testing suite.  Here there is an additional parameter ($\Delta^n$ with this $n$ not to be confused with the ``n"
+%%that is used in the cone) so there are families of polyhedra that can generate sequences of bits.
+%
+%
+%
+%
+%Given a fixed random graph $R_G$ let $f_0(G) = s$ and $f_1(G) = t$.  We argue by contradiction.  Suppose for $j$ sufficiently large each $\mathcal{K}^{j+2}$ is dual to a $(j+3)$-dimensional polytope $P$ that satisfies the $g$-theorem.  Recall, $f_0(P)$ enumerates the number of facets and $f_1(P)$ enumerates the number of codimension two faces.  Since the facets are dual to the vertices in $\mathcal{K}^{j+2}$ there are $s + j$ many implying $f_0(P) = s + j$.  On the other hand, since the codimension two faces of $P$ are dual to the edges in the dual simplicial complex we obtain $f_1(P) = f_1(C^j(G))$, but this is $t + s + (s+1) +(s+2) + \cdots (s + (j-1))$ by Corollary \ref{recursion}. We re-write this sum as
+%
+%\begin{center}
+%$t + s + \underbrace{s+ \cdots+ s}_{j-1} + [1 + \cdots+ (j-1)]$
+%\end{center}
+%
+%This sum is:  $t +sj+j^2 - j$ and we have
+%
+%\begin{center}
+%$f_1(P) = t +sj+j^2 - j$
+%\end{center}
+%
+%Since we assume the $g$-theorem holds the following inequality must hold:  $f_1 \leq\binom{f_0}{2}$ and this gives the following inequality
+%
+%$$t +sj+j^2 - j \leq \binom{s+j}{2}$$
+%
+%Simplifying this inequality yields the following:
+%
+%$$2t + j^2-j \leq s^2-s$$
+%
+%We arrive at a contradiction since $s$ and $t$ are fixed.
+%
+%
+%%\end{Question}
 
