@@ -888,6 +888,8 @@ For the first experiment we fix the h-vector length at 3751, with a pattern of a
 For the second experiment we vary the h-vector length from 3750 to 3849, with a pattern of all 1's, and we do not apply the coning operation.~\ref{fig:lengths}   %  '-p 3750 -f -b' through '-p 3849 -f -b'
 For the third experiment we fix the h-vector length at 3750, vary non-end elements in the pattern from 1 to 100, and do no apply the coning operation.~\ref{fig:patterns}  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
 
+There is no discernable pattern from the trendlines. 
+
 The time required to do this using a naive implementation on a modern consumer CPU (Intel Core i5-4590) is 2.3 seconds. This is therefore a gross upper bound.
 
 % RESULTS CHARTS HERE
@@ -896,21 +898,21 @@ The time required to do this using a naive implementation on a modern consumer C
 \begin{figure}[h!]
 \centering
 \caption{100 trendlines for NIST tests p-values after applying between 0 and 99 coning operations on a vector of length 3751, with a pattern of all 1's} 
-\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-conings-v2.png}
+\includegraphics[width=\linewidth, height=0.6\linewidth]{./charts/varying-conings-v2.png}
 \label{fig:conings}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \caption{100 trendlines for NIST tests p-values on vectors of lengths between 3750 and 3849 with a pattern of all 1's}
-\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-lengths-v2.png}
+\includegraphics[width=\linewidth, height=0.6\linewidth]{./charts/varying-lengths-v2.png}
 \label{fig:lengths}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \caption{100 trendlines for NIST tests p-values on vectors of length 3750 with non-end elements from 1 to 100.}
-\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-patterns-v2.png}
+\includegraphics[width=\linewidth, height=0.6\linewidth]{./charts/varying-patterns-v2.png}
 \label{fig:patterns}
 \end{figure}
 
