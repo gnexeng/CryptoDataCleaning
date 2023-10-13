@@ -101,11 +101,42 @@ def extract_vectors_test(out_dir='4-5-103-203-3750'):
         in_file.close()
 
 
-def main():
-    #create_files('vectors')
+def extract_varying_coning_test(out_dir='varying_coning'):
+    global project_dir
+    for i in range(100):
+        # open filename p3751-f-ci-v2-1-0.txt
+        file_name = f'p3751-f-c{i}-v2-1-0.txt'
+        in_path = os.path.join(project_dir, f'coning-analysis/h-vector-v2.0-tests/2019-12-27-repro-dual-hvectors/e1_varying_coning/{file_name}')
+        in_file = open(in_path, 'r')
+        file_processing(in_file, val=i, vector=('', ''), out_file_name_modifier='varying-coning.csv', out_path_dir=out_dir)
 
-    extract_coning_test()
-    extract_vectors_test()
+def extract_varying_length_test(out_dir='varying_length'):
+    global project_dir
+    for i in range(3750, 3850):
+        # open filename p3751-f-ci-v2-1-0.txt
+        file_name = f'p{i}-f-v2-1-0.txt'
+        in_path = os.path.join(project_dir, f'coning-analysis/h-vector-v2.0-tests/2019-12-27-repro-dual-hvectors/e2_varying_length/{file_name}')
+        in_file = open(in_path, 'r')
+        file_processing(in_file, val=i, vector=('', ''), out_file_name_modifier='varying-length.csv', out_path_dir=out_dir)
+
+def extract_varying_pattern_test(out_dir='varying_patterns'):
+    global project_dir
+    for i in range(1, 101):
+        # open filename p3751-f-ci-v2-1-0.txt
+        file_name = f'p3750-i{i}-f-v2-1-0.txt'
+        in_path = os.path.join(project_dir, f'coning-analysis/h-vector-v2.0-tests/2019-12-27-repro-dual-hvectors/e2_varying_patterns/{file_name}')
+        in_file = open(in_path, 'r')
+        file_processing(in_file, val=i, vector=('', ''), out_file_name_modifier='varying-pattern.csv', out_path_dir=out_dir)
+
+
+def main():
+    #create_files('varying-coning')
+    #extract_coning_test()
+    #extract_vectors_test()
+
+    #extract_varying_coning_test()
+    #extract_varying_length_test()
+    extract_varying_pattern_test()
     pass
 
 
