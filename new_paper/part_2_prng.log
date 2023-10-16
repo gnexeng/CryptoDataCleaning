@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.22)  13 OCT 2023 10:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.22)  16 OCT 2023 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -838,30 +838,30 @@ LaTeX Warning: Label `N simplex' multiply defined.
 )
 \openout1 = `part_2_prng.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
 
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -897,7 +897,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 (./part_2_prng.out) (./part_2_prng.out)
 \@outlinefile=\write5
@@ -912,94 +912,83 @@ Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
 \FBsc@max=\skip81
 \FBso@max=\skip82
 )
-Package xypdf Info: Line width: 0.47998pt on input line 29.
+Package xypdf Info: Line width: 0.47998pt on input line 30.
  [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/
 local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--118
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
 
  []
 
 [3]
-Overfull \hbox (9.82986pt too wide) in paragraph at lines 139--149
-[][]\OT1/cmr/bx/n/12 Example 3.3. []\OT1/cmr/m/n/12 The set $\OMS/cmsy/m/n/12 K
- \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f;\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1
-/cmr/m/n/12 1\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/
-n/12 2\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 3\
-OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1\OML/cmm
-/m/it/12 ; \OT1/cmr/m/n/12 2\OMS/cmsy/m/n/12 gg$ \OT1/cmr/m/n/12 is a one-dimen
-sional
- []
-
-
 Underfull \vbox (badness 1147) has occurred while \output is active []
 
  [4]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 156--166
+Overfull \hbox (12.0pt too wide) in paragraph at lines 152--162
 []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--166
+Underfull \hbox (badness 10000) in paragraph at lines 152--162
 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 178--206
+Overfull \hbox (12.0pt too wide) in paragraph at lines 174--202
 []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--206
+Underfull \hbox (badness 10000) in paragraph at lines 174--202
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
 [7]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 309--319
+Overfull \hbox (12.0pt too wide) in paragraph at lines 305--315
 []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--319
+Underfull \hbox (badness 10000) in paragraph at lines 305--315
 
  []
 
 [8]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 333--349
+Overfull \hbox (12.0pt too wide) in paragraph at lines 329--345
 []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--349
+Underfull \hbox (badness 10000) in paragraph at lines 329--345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 354--389
+Overfull \hbox (12.0pt too wide) in paragraph at lines 350--385
 []$[]$ 
  []
 
@@ -1007,22 +996,22 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 354--389
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 397--410
+Overfull \hbox (12.0pt too wide) in paragraph at lines 393--406
 []$[]$ 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 420--448
+Underfull \hbox (badness 10000) in paragraph at lines 416--444
 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 457--492
+Overfull \hbox (12.0pt too wide) in paragraph at lines 453--488
 []$[]$ 
  []
 
@@ -1030,20 +1019,27 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 457--492
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-Overfull \hbox (18.86403pt too wide) in paragraph at lines 533--534
+Overfull \hbox (7.11415pt too wide) in paragraph at lines 529--530
 [][]\OT1/cmr/bx/n/12 Definition 4.7. []\OT1/cmr/m/n/12 Let $(\OML/cmm/m/it/12 f
 []; [] ; f[]\OT1/cmr/m/n/12 )$ be the $\OML/cmm/m/it/12 f$\OT1/cmr/m/n/12 -vect
 or of an $(\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)$-dimensio
-nal
+-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--541
+Overfull \hbox (3.04254pt too wide) in paragraph at lines 529--530
+\OT1/cmr/m/n/12 nal sim-pli-cial com-plex $\OMS/cmsy/m/n/12 K$\OT1/cmr/m/n/12 .
+ Then the $\OML/cmm/m/it/12 h$\OT1/cmr/m/n/12 -vector of the dual, $(\OML/cmm/m
+/it/12 h[]; h[]; [] ; h[]\OT1/cmr/m/n/12 )$,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--537
 
  []
 
 [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 619--620
+Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
 
@@ -1051,14 +1047,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 679.
+(amsmath)                 on input line 675.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--694
+Underfull \hbox (badness 10000) in paragraph at lines 688--690
 
  []
 
 [16]
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 712--713
 
  []
@@ -1079,148 +1080,209 @@ Underfull \hbox (badness 10000) in paragraph at lines 724--725
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 726--728
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 728--729
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 730--732
+Underfull \hbox (badness 10000) in paragraph at lines 729--730
 
  []
 
+[17] [18] [19] [20]
+<./charts/random-sparkline.png, id=278, 181.67876pt x 15.05624pt>
+File: ./charts/random-sparkline.png Graphic file (type png)
+<use ./charts/random-sparkline.png>
+Package pdftex.def Info: ./charts/random-sparkline.png  used on input line 891.
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--733
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 733--734
-
- []
-
-[18] [19] [20]
-<./charts/varying-conings-v2.png, id=280, 76.3653pt x 671.8701pt>
-File: ./charts/varying-conings-v2.png Graphic file (type png)
-<use ./charts/varying-conings-v2.png>
-Package pdftex.def Info: ./charts/varying-conings-v2.png  used on input line 90
-1.
-(pdftex.def)             Requested size: 360.0996pt x 215.99725pt.
+(pdftex.def)             Requested size: 180.0pt x 14.91743pt.
+<./charts/non-random-sparkline.png, id=280, 181.67876pt x 15.05624pt>
+File: ./charts/non-random-sparkline.png Graphic file (type png)
+<use ./charts/non-random-sparkline.png>
+Package pdftex.def Info: ./charts/non-random-sparkline.png  used on input line 
+893.
+(pdftex.def)             Requested size: 180.0pt x 14.91743pt.
+ [21 <./charts/random-sparkline.png> <./charts/non-random-sparkline.png>]
+<./charts/varying-conings-v2-alt.png, id=302, 181.67876pt x 1406.25375pt>
+File: ./charts/varying-conings-v2-alt.png Graphic file (type png)
+<use ./charts/varying-conings-v2-alt.png>
+Package pdftex.def Info: ./charts/varying-conings-v2-alt.png  used on input lin
+e 906.
+(pdftex.def)             Requested size: 288.03339pt x 179.98698pt.
+<./charts/ApproximateEntropy_e_2_1.png, id=303, 686.565pt x 497.86pt>
+File: ./charts/ApproximateEntropy_e_2_1.png Graphic file (type png)
+<use ./charts/ApproximateEntropy_e_2_1.png>
+Package pdftex.def Info: ./charts/ApproximateEntropy_e_2_1.png  used on input l
+ine 914.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/varying-lengths-v2.png, id=282, 76.3653pt x 671.8701pt>
-File: ./charts/varying-lengths-v2.png Graphic file (type png)
-<use ./charts/varying-lengths-v2.png>
-Package pdftex.def Info: ./charts/varying-lengths-v2.png  used on input line 90
-8.
-(pdftex.def)             Requested size: 360.0996pt x 215.99725pt.
+<./charts/LinearComplexity_e_2_1.png, id=304, 686.565pt x 497.86pt>
+File: ./charts/LinearComplexity_e_2_1.png Graphic file (type png)
+<use ./charts/LinearComplexity_e_2_1.png>
+Package pdftex.def Info: ./charts/LinearComplexity_e_2_1.png  used on input lin
+e 922.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/varying-patterns-v2.png, id=283, 76.3653pt x 671.8701pt>
-File: ./charts/varying-patterns-v2.png Graphic file (type png)
-<use ./charts/varying-patterns-v2.png>
-Package pdftex.def Info: ./charts/varying-patterns-v2.png  used on input line 9
-15.
-(pdftex.def)             Requested size: 360.0996pt x 215.99725pt.
+<./charts/Rank_e_2_1.png, id=305, 686.565pt x 497.86pt>
+File: ./charts/Rank_e_2_1.png Graphic file (type png)
+<use ./charts/Rank_e_2_1.png>
+Package pdftex.def Info: ./charts/Rank_e_2_1.png  used on input line 929.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21] [22 <./charts/varying-conings-v2.png> <./charts/varying-lengths-v2.png>]
-[23 <./charts/varying-patterns-v2.png>]
-<./charts/ApproximateEntropy_3_3.png, id=308, 686.565pt x 497.86pt>
+[22 <./charts/varying-conings-v2-alt.png>] [23 <./charts/ApproximateEntropy_e_2
+_1.png> <./charts/LinearComplexity_e_2_1.png>] [24 <./charts/Rank_e_2_1.png>]
+<./charts/varying-lengths-v2-alt.png, id=330, 181.67876pt x 1406.25375pt>
+File: ./charts/varying-lengths-v2-alt.png Graphic file (type png)
+<use ./charts/varying-lengths-v2-alt.png>
+Package pdftex.def Info: ./charts/varying-lengths-v2-alt.png  used on input lin
+e 942.
+(pdftex.def)             Requested size: 288.03339pt x 179.98698pt.
+<./charts/ApproximateEntropy_e_2_2.png, id=331, 686.565pt x 497.86pt>
+File: ./charts/ApproximateEntropy_e_2_2.png Graphic file (type png)
+<use ./charts/ApproximateEntropy_e_2_2.png>
+Package pdftex.def Info: ./charts/ApproximateEntropy_e_2_2.png  used on input l
+ine 949.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./charts/LinearComplexity_e_2_2.png, id=332, 686.565pt x 497.86pt>
+File: ./charts/LinearComplexity_e_2_2.png Graphic file (type png)
+<use ./charts/LinearComplexity_e_2_2.png>
+Package pdftex.def Info: ./charts/LinearComplexity_e_2_2.png  used on input lin
+e 957.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./charts/Rank_e_2_2.png, id=333, 686.565pt x 497.86pt>
+File: ./charts/Rank_e_2_2.png Graphic file (type png)
+<use ./charts/Rank_e_2_2.png>
+Package pdftex.def Info: ./charts/Rank_e_2_2.png  used on input line 964.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25
+
+ <./charts/varying-lengths-v2-alt.png>] [26 <./charts/ApproximateEntropy_e_2_2.
+png> <./charts/LinearComplexity_e_2_2.png>] [27 <./charts/Rank_e_2_2.png>]
+<./charts/varying-patterns-v2-alt.png, id=359, 181.67876pt x 1406.25375pt>
+File: ./charts/varying-patterns-v2-alt.png Graphic file (type png)
+<use ./charts/varying-patterns-v2-alt.png>
+Package pdftex.def Info: ./charts/varying-patterns-v2-alt.png  used on input li
+ne 977.
+(pdftex.def)             Requested size: 288.03339pt x 179.98698pt.
+<./charts/ApproximateEntropy_e_2_3.png, id=360, 686.565pt x 497.86pt>
+File: ./charts/ApproximateEntropy_e_2_3.png Graphic file (type png)
+<use ./charts/ApproximateEntropy_e_2_3.png>
+Package pdftex.def Info: ./charts/ApproximateEntropy_e_2_3.png  used on input l
+ine 984.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
+<./charts/LinearComplexity_e_2_3.png, id=361, 686.565pt x 497.86pt>
+File: ./charts/LinearComplexity_e_2_3.png Graphic file (type png)
+<use ./charts/LinearComplexity_e_2_3.png>
+Package pdftex.def Info: ./charts/LinearComplexity_e_2_3.png  used on input lin
+e 992.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./charts/Rank_e_2_3.png, id=362, 686.565pt x 497.86pt>
+File: ./charts/Rank_e_2_3.png Graphic file (type png)
+<use ./charts/Rank_e_2_3.png>
+Package pdftex.def Info: ./charts/Rank_e_2_3.png  used on input line 999.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28
+
+ <./charts/varying-patterns-v2-alt.png> <./charts/ApproximateEntropy_e_2_3.png>
+] [29 <./charts/LinearComplexity_e_2_3.png> <./charts/Rank_e_2_3.png>]
+<./charts/ApproximateEntropy_3_3.png, id=381, 686.565pt x 497.86pt>
 File: ./charts/ApproximateEntropy_3_3.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_3_3.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_3_3.png  used on input lin
-e 962.
+e 1021.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
-<./charts/ApproximateEntropy_4_5.png, id=309, 686.565pt x 496.85625pt>
+<./charts/ApproximateEntropy_4_5.png, id=382, 686.565pt x 496.85625pt>
 File: ./charts/ApproximateEntropy_4_5.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_4_5.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_4_5.png  used on input lin
-e 968.
+e 1027.
 (pdftex.def)             Requested size: 343.28166pt x 248.4275pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/LinearComplexity_3_3.png, id=310, 686.565pt x 497.86pt>
+<./charts/LinearComplexity_3_3.png, id=383, 686.565pt x 497.86pt>
 File: ./charts/LinearComplexity_3_3.png Graphic file (type png)
 <use ./charts/LinearComplexity_3_3.png>
 Package pdftex.def Info: ./charts/LinearComplexity_3_3.png  used on input line 
-974.
+1033.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/LinearComplexity_4_5.png, id=311, 685.56125pt x 497.86pt>
+<./charts/LinearComplexity_4_5.png, id=384, 685.56125pt x 497.86pt>
 File: ./charts/LinearComplexity_4_5.png Graphic file (type png)
 <use ./charts/LinearComplexity_4_5.png>
 Package pdftex.def Info: ./charts/LinearComplexity_4_5.png  used on input line 
-980.
+1039.
 (pdftex.def)             Requested size: 342.77979pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/Rank_3_3.png, id=312, 686.565pt x 497.86pt>
+<./charts/Rank_3_3.png, id=385, 686.565pt x 497.86pt>
 File: ./charts/Rank_3_3.png Graphic file (type png)
 <use ./charts/Rank_3_3.png>
-Package pdftex.def Info: ./charts/Rank_3_3.png  used on input line 986.
+Package pdftex.def Info: ./charts/Rank_3_3.png  used on input line 1045.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/Rank_4_5.png, id=313, 686.565pt x 497.86pt>
+<./charts/Rank_4_5.png, id=386, 686.565pt x 497.86pt>
 File: ./charts/Rank_4_5.png Graphic file (type png)
 <use ./charts/Rank_4_5.png>
-Package pdftex.def Info: ./charts/Rank_4_5.png  used on input line 992.
+Package pdftex.def Info: ./charts/Rank_4_5.png  used on input line 1051.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24
+[30
 
- <./charts/ApproximateEntropy_3_3.png>] [25 <./charts/ApproximateEntropy_4_5.pn
-g> <./charts/LinearComplexity_3_3.png>] [26 <./charts/LinearComplexity_4_5.png>
- <./charts/Rank_3_3.png>] [27 <./charts/Rank_4_5.png>]
-Underfull \hbox (badness 1354) in paragraph at lines 1049--1052
-[]\OT1/cmr/m/n/10 S. No-bari., X. Lu., P. Kar-ras., S. Bres-san., \OT1/cmr/m/it
-/10 Fast Ran-dom Graph
- []
+ <./charts/ApproximateEntropy_3_3.png>] [31 <./charts/ApproximateEntropy_4_5.pn
+g> <./charts/LinearComplexity_3_3.png>] [32 <./charts/LinearComplexity_4_5.png>
+ <./charts/Rank_3_3.png>] [33 <./charts/Rank_4_5.png>] [34
 
-
-Underfull \hbox (badness 1931) in paragraph at lines 1049--1052
-\OT1/cmr/m/it/10 Gen-er-a-tion, \OT1/cmr/m/n/10 Pro-ceed-ings of the 14th In-te
-r-na-tional Con-fer-ence on Ex-
- []
-
-
-Underfull \hbox (badness 1648) in paragraph at lines 1049--1052
-\OT1/cmr/m/n/10 tend-ing Data-base Tech-nol-ogy (pp. 331-342). Up-p-sala, Swe-d
-en: ACM.
- []
-
-
-Overfull \hbox (23.21709pt too wide) in paragraph at lines 1067--1067
-[]\OT1/cmr/m/sc/10 Department of Com-puter Sci-ence, Min-nesota state Uni-ver-s
-ity, Mankato,
- []
-
-[28
-
-] (./part_2_prng.aux)
+]
+(./part_2_prng.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `part_2_prng.out' has not changed.
-(rerunfilecheck)             Checksum: 764217A9FD93371F6350997F82ED706E;1260.
+(rerunfilecheck)             Checksum: D95F65F735AACC568FEF17A424AA36C2;1260.
  ) 
 Here is how much of TeX's memory you used:
- 26404 strings out of 476025
- 472738 string characters out of 5790017
- 1875388 words of memory out of 5000000
- 46134 multiletter control sequences out of 15000+600000
+ 26513 strings out of 476025
+ 476011 string characters out of 5790017
+ 1874388 words of memory out of 5000000
+ 46214 multiletter control sequences out of 15000+600000
  525748 words of font info for 88 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  102i,14n,104p,3222b,749s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1247,10 +1309,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf
 dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on part_2_prng.pdf (28 pages, 1119657 bytes).
+Output written on part_2_prng.pdf (34 pages, 676884 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
- 105 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 423 compressed objects within 5 object streams
+ 123 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
