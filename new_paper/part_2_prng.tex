@@ -132,7 +132,7 @@ Notice that since $\mathcal{K}$ is a non-empty set and since $\emptyset \subsete
 \end{Remark}
 
 \begin{Example}\label{E1}
-The set $\mathcal{K}=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\}\}$ is a one-dimen-sional simplicial complex on the set $\{1,2,3\}$.\\
+The set $\mathcal{K}=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\}\}$ is a one-dimensional simplicial complex on the set $\{1,2,3\}$.\\
 \begin{minipage}{\linewidth}
 $$\begin{tikzpicture}
 \filldraw [black] (-10,0) node[above left =3pt]{$1$} circle (2.5pt);  %(0,4)
@@ -223,7 +223,7 @@ For Example \ref{E1} we have $\overrightarrow{f}(\mathcal{K})=(3,1)$.
 For a graph $G$, $f_0(C^j(G)) = f_0(G) + j$ and $f_1(C^j(G)) =  f_1(C^{j-1}(G)) +  f_0(C^{j-1}(G))$
 \end{Lemma}
 
-As an immediate Corollary of Lemma \ref{Count on Cone} we re-write $f_1(C^n(R_G))$ by unravelling the recursion.
+As an immediate Corollary of Lemma \ref{Count on Cone} we re-write $f_1(C^n(R_G))$ by unraveling the recursion.
 
 \begin{Corollary}\label{recursion}
 For a graph $G$ the number of edges of $C^j(G$) can be re-written as $f_1(C^j(G)) = f_1(G) + \sum_{k = 0}^ {j-1} f_0(C^k(G))$
@@ -525,7 +525,7 @@ Later we will consider $\mathcal{K} = C^j(R_G)$ (for some positive integer $j$) 
 %that encode the face structure, namely, $\overrightarrow{h}$ and the $\overrightarrow{f}$.
 
 \begin{Definition}
-Let $(f_0,\ldots,f_{n-1})$ be the $f$-vector of an $(n-1)$-dimensio-nal simplicial complex $\mathcal{K}$. Then the $h$-vector of the dual, $(h_0, h_1,\ldots,h_n)$, is defined by the following equation:
+Let $(f_0,\ldots,f_{n-1})$ be the $f$-vector of an $(n-1)$-dimensional simplicial complex $\mathcal{K}$. Then the $h$-vector of the dual, $(h_0, h_1,\ldots,h_n)$, is defined by the following equation:
 
 $$h_0t^n + \cdots+ h_{n-1}t + h_n  = (t-1)^n + f_0(t-1)^{n-1} + \cdots + f_{n-1}$$
 
@@ -893,14 +893,14 @@ Recall, one theme of the paper is to show that the NIST test suite cannot detect
 A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a $p$-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph (See Figure~\ref{fig:random} and ~\ref{fig:nonrandom}). The sparklines represent the trend of all NIST tests, which if close to 0.0 or 1.0 would look like a flatline. The time required to do this using a naive implementation on a modern consumer CPU (Intel Core i5-4590) is 2.3 seconds, which is consistent with our previous tests performed in~\cite{ALDH}. This is therefore a gross upper bound. %\textcolor{red}{is this an obvious fact?  If so, ok to leave.  If not, then some explanation is needed here}
 
 
-For the first experiment, we fix an $h$-vector of length 3751 consisting of all ones.  So this is the $h$-vector of $\Delta^{3751}$.  We proceed to steps 2 and 3 and apply the cone to the dual simplicial complex then compute its $f$-vector.  Vary the number of coning operations from 0 to 99 times on the dual complex $\mathcal{K}$ for $0 \leq k \leq 99$.  Refer to (see Figure~\ref{fig:conings}) and the sample scatter plots on Figures~\ref{fig:approxentropy21},~\ref{fig:linearcomplexity21} and~\ref{fig:rank21}, which show the $p$-value distributions and also illustrate the fact that the NIST test suite is unable to detect non-randomness.   %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b'
+For the first experiment, we fix an $h$-vector of length 3751 consisting of all ones.  So this is the $h$-vector of $\Delta^{3751}$.  We proceed to steps 2 and 3 and apply the cone to the dual simplicial complex then compute its $f$-vector.  Vary the number of coning operations from 0 to 99 times on the dual complex $\mathcal{K}$ for $0 \leq k \leq 99$.  See Figure~\ref{fig:conings}) in Appendix~\ref{first-appendix} and the sample scatter plots on Figures~\ref{fig:approxentropy21},~\ref{fig:linearcomplexity21} and~\ref{fig:rank21}, which show the $p$-value distributions and also illustrate the fact that the NIST test suite is unable to detect non-randomness.   %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b'
 
-\begin{figure}[h!]
-\centering
-\caption{100 trendlines for all NIST tests $p$-values after applying between 0 and 99 coning operations on a vector of length 3751, with a pattern of all 1's}
-\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-conings-v2-alt.png}
-\label{fig:conings}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\caption{100 trendlines for all NIST tests $p$-values after applying between 0 and 99 coning operations on a vector of length 3751, with a pattern of all 1's}
+%\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-conings-v2-alt.png}
+%\label{fig:conings}
+%\end{figure}
 
 
 \begin{figure}[h!]
@@ -926,17 +926,17 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent For the second experiment, we computed the $f$-vector dual to the $h$-vector without applying the cone (or iterated cone). This should serve as a benchmark since there are no random processes involved.  As a result, the NIST suite should indicate that the bit stream is non-random.  To this end, vary the $h$-vector length from 3750 to 3849. So, we have a collection of $h$-vectors all of whose components are ones corresponding to a set of standard simplicies:  $\{\Delta^i \;| \; 3750 \leq i \leq 3849\}$.  Here, the cone operation is not applied to the dual. However, the NIST test suite is unable to detect the non-randomness as illustrated in the sparklines in Figure~\ref{fig:lengths}.  We have also included scatter plots for the Approximate Entropy test (Figure~\ref{fig:approxentropy22}, the Linear Complexity test (Figure~\ref{fig:linearcomplexity22} and the Rank test (Figure~\ref{fig:rank22}.  %  '-p 3750 -f -b' through '-p 3849 -f -b'
+\indent For the second experiment, we computed the $f$-vector dual to the $h$-vector without applying the cone (or iterated cone). This should serve as a benchmark since there are no random processes involved.  As a result, the NIST suite should indicate that the bit stream is non-random.  To this end, vary the $h$-vector length from 3750 to 3849. So, we have a collection of $h$-vectors all of whose components are ones corresponding to a set of standard simplicies:  $\{\Delta^i \;| \; 3750 \leq i \leq 3849\}$.  Here, the cone operation is not applied to the dual. However, the NIST test suite is unable to detect the non-randomness as illustrated in the sparklines in Figure~\ref{fig:lengths} in Appendix~\ref{first-appendix}.  We have also included scatter plots for the Approximate Entropy test (Figure~\ref{fig:approxentropy22}), the Linear Complexity test (Figure~\ref{fig:linearcomplexity22}) and the Rank test (Figure~\ref{fig:rank22}).  %  '-p 3750 -f -b' through '-p 3849 -f -b'
 %\textcolor{red}{provide some reasoning as to why the vector length is varied and why that matters}
 
 
 
-\begin{figure}[h!]
-\centering
-\caption{100 trendlines for all NIST tests $p$-values on vectors of lengths between 3750 and 3849 with a pattern of all 1's}
-\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-lengths-v2-alt.png}
-\label{fig:lengths}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\caption{100 trendlines for all NIST tests $p$-values on vectors of lengths between 3750 and 3849 with a pattern of all 1's}
+%\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-lengths-v2-alt.png}
+%\label{fig:lengths}
+%\end{figure}
 
 \begin{figure}[h!]
 \centering
@@ -961,17 +961,17 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent Motivated bythe failuer of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end \textcolor{red}{Explain what is meant by non-end elements and provide an example.  This is not clear to me} elements in the pattern from 1 to 100.  The cone is not applied to the dual. See Figures~\ref{fig:patterns},~\ref{fig:approxentropy23},~\ref{fig:linearcomplexity23} and~\ref{fig:rank23}  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
+\indent Motivated by the failure of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end \textcolor{red}{Explain what is meant by non-end elements and provide an example.  This is not clear to me} elements in the pattern from 1 to 100.  The cone is not applied to the dual. As with the previous two experiments, we included the sparklines (see Figure~\ref{fig:patterns} in Appendix~\ref{first-appendix}) and three scatter plots for the Approximate Entropy test (see Figure~\ref{fig:approxentropy23}), the Linear Complexity test (see Figure~\ref{fig:linearcomplexity23}) and the Rank test (see Figure~\ref{fig:rank23}).  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
 
 
 
 
-\begin{figure}[h!]
-\centering
-\caption{100 trendlines for all NIST tests $p$-values on vectors of length 3750 with non-end elements from 1 to 100.}
-\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-patterns-v2-alt.png}
-\label{fig:patterns}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\caption{100 trendlines for all NIST tests $p$-values on vectors of length 3750 with non-end elements from 1 to 100.}
+%\includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/varying-patterns-v2-alt.png}
+%\label{fig:patterns}
+%\end{figure}
 
 \begin{figure}[h!]
 \centering
@@ -998,8 +998,35 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 
 
 \clearpage
-\section{Appendix} \label{appendix}
+\appendix
 
+\section{First Appendix} \label{first-appendix}
+This appendix includes the sparklines for all three experiments described in the Results section~\ref{results}. Each sparkline represents all p-values for all tests of the NIST suite for a particular bit stream input. 
+
+\begin{figure}[h!]
+\centering
+\caption{100 trendlines for all NIST tests $p$-values after applying between 0 and 99 coning operations on a vector of length 3751, with a pattern of all 1's}
+\includegraphics[width=0.2\linewidth, height=1.2\linewidth]{./charts/varying-conings-v2-alt.png}
+\label{fig:conings}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\caption{100 trendlines for all NIST tests $p$-values on vectors of lengths between 3750 and 3849 with a pattern of all 1's}
+\includegraphics[width=0.2\linewidth, height=1.2\linewidth]{./charts/varying-lengths-v2-alt.png}
+\label{fig:lengths}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\caption{100 trendlines for all NIST tests $p$-values on vectors of length 3750 with non-end elements from 1 to 100.}
+\includegraphics[width=0.2\linewidth, height=1.2\linewidth]{./charts/varying-patterns-v2-alt.png}
+\label{fig:patterns}
+\end{figure}
+
+
+\clearpage
+\section{Second Appendix}\label{second-appendix}
 %\textcolor{red}{
 %Add the improved results from the first paper.  Just a summary with a link to the new results etc...}
 % Began from the $f$-vector 3,3 and coned it from 3750 to 3849 times (100 runs)
