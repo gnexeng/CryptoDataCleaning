@@ -69,7 +69,7 @@ Given a simplicial complex $\mathcal{K}$ it is possible to determine a related c
 
 Simple convex polytopes are interesting and show up in various fields of mathematics. They are well behaved in certain ways and there are other vectors associated to them called the $h$-vector and they exhibit a symmetry described by the Dehn-Sommerville relations.  For such polytopes, these vectors also satisfy a collection of inequalities that are described by the well-known $g$-theorem \cite{B,BP1}.
 
-In this paper we focus on a particularly nice and well-understood family of simple convex polytopes; the standard $n$-simplex $\Delta^n$, for some positive integer $n \geq 1$.  The face structure is understood and the corresponding vectors mentioned above can be determined as well as their dual simplicial complexes (and their respective $f$-vectors).  This group of polytopes is sufficient in demonstrating the claims of the paper.  Namely, the bits derived from complexes built out of the duals of $\Delta^n$ are determined to be random by the NIST test suite.
+In this paper we focus on a particularly nice and well-understood family of simple convex polytopes; the standard $n$-simplex $\Delta^n$, for some positive integer $n \geq 1$.  The face structure is understood and the corresponding vectors mentioned above can be determined as well as their dual simplicial complexes (and their respective $f$-vectors).  This group of polytopes is sufficient in demonstrating the claims of the paper.  Namely, the bits derived from complexes built out of the duals of $\Delta^n$ are determined to be random by the NIST test suite even though they are not.
 
 
 More is true, indeed; if we let $\mathcal{K}$ be the dual of $\Delta^n$, then we construct a family of simplicial complexes $C^j(\mathcal{K})$ and show that they are not dual to a simple convex polytope by applying the $g$-theorem.
@@ -90,9 +90,9 @@ Before stating the main results we list the most pertinent definitions.  Let $\m
 
 To keep track of the number of $i$ simplicies in $\mathcal{K}$ or $C^j(\mathcal{K})$ there is the \textit{$f$-vector} and it is the vector with the number of $i$ simplicies in the $i^{th}$ component.  We represent the $i^{th}$ component of $\overrightarrow{f}(\mathcal{K})$ by $f_{i}(\mathcal{K})$.  The vector is very often written $(f_0,...,f_{n-1})$ where the last component counts the number of maximal dimensional simplicies in $\mathcal{K}$ (as written this vector encodes the number of $i$-simplicies in an $(n-1)$-dimensional simplicial complex).  A simplicial complex $\mathcal{K}$ is \textit{symmetrical} if $f_i(\mathcal{K}) = f_{n-i-1}(\mathcal{K})$ for $0 \leq i \leq n-1$.  When the components of this vector are converted into bit sequences, the NIST test suite classifies these as random. The results of the testing can be found in the following GitHub public repository ~\url{https://GitHub.com/gnexeng/coning-analysis.git}. This is a fork of the repository used in ~\cite{ALDH}. %\S \textcolor{red}{let the reader know where to find these results}.
 
-When $\mathcal{K}$ is a \textit{simplicial sphere} (meaning its geometric realization is homeomorphic to a sphere), then there is a simple polytope $P$ that is dual to $\mathcal{K}$ and vice-versa.  We briefly recall the construction; the interested reader can refer to \S4 where a more detailed description is given.  The vertices of $\mathcal{K}$ correspond to the codimension one faces of $P$, the edges correspond to the codimension two faces of $P$ so on and so forth. Given this, the polytope $P$ will satisfy the criteria of the $g$-theorem which describes certain symmetry conditions and inequalities of a vector related to $P$ called the $h$-vector as described by \cite{BP1} and it is related to the vector whose components counts the number of faces of $P$ \cite{BP1}.  Unfortunately, this too, is called the $f$-vector, but when $\mathcal{K}$ is dual to $P$ then there is the following relation that relates the two noting that $(h_0, h_1,\ldots,h_n)$ is the $h$-vector of the dual:  $h_0t^n + \cdots+ h_{n-1}t + h_n  = (t-1)^n + f_0(t-1)^{n-1} + \cdots + f_{n-1}$.
+When $\mathcal{K}$ is a \textit{simplicial sphere} (meaning its geometric realization is homeomorphic to a sphere), then there is a simple polytope $P$ that is dual to $\mathcal{K}$ and vice-versa.  We briefly recall the construction; the interested reader can refer to \S4 where a more detailed description is given.  The vertices of $\mathcal{K}$ correspond to the codimension one faces of $P$, the edges correspond to the codimension two faces of $P$ so on and so forth. Given this, the polytope $P$ will satisfy the criteria of the $g$-theorem which describes certain symmetry conditions and inequalities of a vector related to $P$ called the $h$-vector as described by \cite{BP1}. It is related to the vector whose components counts the number of faces of $P$ \cite{BP1}.  Unfortunately, this too, is called the $f$-vector, but when $\mathcal{K}$ is dual to $P$ then there is the following relation that relates the two noting that $(h_0, h_1,\ldots,h_n)$ is the $h$-vector of the dual:  $h_0t^n + \cdots+ h_{n-1}t + h_n  = (t-1)^n + f_0(t-1)^{n-1} + \cdots + f_{n-1}$.
 
-In \cite{B} the $g$-theorem is stated in terms of certain ``$g_i$" that satisfy a variety of inequalities and they too are related to the components $f_i$ in the $f$-vector of $P$.  If a general $P$ does not satisfy the conditions of the $g$-theorem then it is not simple.  If $\mathcal{K}$ is a random graph $R_G$, then there are equations that follow from the $g$-theorem that one can use to show that the simplicial complexes $C^j(R_G)$ are not simplicial spheres (meaning, the dual $P$ is not simple) for $j$ sufficiently large.\\[.5ex]
+In \cite{B}, the $g$-theorem is stated in terms of certain ``$g_i$" that satisfy a variety of inequalities and they too are related to the components $f_i$ in the $f$-vector of $P$.  If a general $P$ does not satisfy the conditions of the $g$-theorem then it is not simple.  If $\mathcal{K}$ is a random graph $R_G$, then there are equations that follow from the $g$-theorem that one can use to show that the simplicial complexes $C^j(R_G)$ are not simplicial spheres (meaning, the dual $P$ is not simple) for $j$ sufficiently large.\\[.5ex]
 
 The main results are:
 
@@ -323,7 +323,7 @@ Suppose $P = conv(\{ x_1,\ldots,x_n \})$ for points $x_i \in \mathbb{R}^q$, then
 
 A vertex of $P$ is a zero dimensional face.  The set of all vertices of $P$ will be denoted by $V(P)$ and $|V(P)|$ will be the cardinality of this set.  Proper faces $F$ of $P$ are polytopes such that $V(F) = F \bigcap Ver(P)$ \cite{B} pg. 45 Theorem 7.3.  Since they are polytopes they have a dimension given by the above.
 
-$P$ can also be regarded as the intersection of finitely many halfspaces in a certain Euclidean space \cite{B, BP1} and such sets are often referred to as \textit{polyhedral sets}.  When the context is clear we will simply refer to $P$ as a polytope.  Given a polytope and a finite collection of halfspaces defining it, a supporting hyperplane is a hyperplane $\mathcal{H}$ such that $P \bigcap \mathcal{H} \neq \emptyset$ such that the polytope is contained in one of the halfspaces determined by the hyperplane \cite{BP1}. In this context a \textit{face} of $P$ is $\mathcal{H} \bigcap P = F$.
+$P$ can also be regarded as the intersection of finitely many halfspaces in a certain Euclidean space \cite{B, BP1} and such sets are often referred to as \textit{polyhedral sets}.  When the context is clear we will simply refer to $P$ as a polytope.  Given a polytope and a finite collection of halfspaces defining it, a supporting hyperplane is a hyperplane $\mathcal{H}$ such that $P \bigcap \mathcal{H} \neq \emptyset$ where the polytope is contained in one of the halfspaces determined by the hyperplane \cite{BP1}. In this context, a \textit{face} of $P$ is $\mathcal{H} \bigcap P = F$.
 
 \begin{minipage}{\linewidth}
 \small
@@ -408,7 +408,7 @@ We now follow the treatment in \cite{DJ}-specifically pages 425 and 430.  The ma
 
 
 \begin{Notation}
-We fix the notation regarding the dual.  Given a simplicial complex $\mathcal{K}$ we will write the dual as $P$ (or $P_{\mathcal{K}}$ if we need to stress certain properties of this combinatorial object).  When convenient we may just say ``the dual".  If $P$ is given then the dual, $\mathcal{K}_P$ will be written as $\mathcal{K}$ when there is no room for confusion.  For reasons of convenience certain authors use the notation $\mathcal{K}^*$ to denote the dual, especially when considering $\mathcal{K}^{**}$ (\cite{G}), but we will stick with the conventions mentioned above.  Given $\mathcal{K}$ the notation $P_{\mathcal{K}}$ is used in the paper \cite{DJ}.
+We fix the notation regarding the dual.  Given a simplicial complex $\mathcal{K}$ we will write the dual as $P$ (or $P_{\mathcal{K}}$ if we need to stress certain properties of this combinatorial object).  When convenient we may just say ``the dual".  If $P$ is given, then the dual, $\mathcal{K}_P$ will be written as $\mathcal{K}$ when there is no room for confusion.  For reasons of convenience certain authors use the notation $\mathcal{K}^*$ to denote the dual, especially when considering $\mathcal{K}^{**}$ (\cite{G}), but we will stick with the conventions mentioned above.  Given $\mathcal{K}$ the notation $P_{\mathcal{K}}$ is used in the paper \cite{DJ}.
 \end{Notation}
 
 \begin{Example}\label{Dual Square}
@@ -516,9 +516,9 @@ $v_{F_8}$ & $\{v_{F_1}, v_{F_4}\}$   &   $\{v_{F_3}, v_{F_4}, v_{F_6}\}$        
 
 In the case that a simplicial complex is a simplicial sphere, then the construction can made to generate a simple polytope.  Since the zero simplicies in $\mathcal{K}$ are dual to codimension one faces in the dual polytope, the face structure of the polytope is given by working through higher dimensional simplicies of $K$ and carefully fitting together the faces of the polytope using the definition of the simplicial complex along with the process to dualize.
 
-If $K$ is a general simplicial complex then it is possible to construct a simple polyhedral complex \cite{DJ} pg. 428 and this involves the notion of a cone on a geometric realization of various posets.
+If $K$ is a general simplicial complex then it is possible to construct a simple polyhedral complex \cite{DJ} pg. 428. This involves the notion of a cone on the geometric realization of various posets.
 
-Later we will consider $\mathcal{K} = C^j(R_G)$ (for some positive integer $j$) and then analyze certain inequalities derived from the $g$-theorem.  To do so requires the analysis of the \textit{$h$-vector}(denoted $\overrightarrow{h}$) of the dual and how it is related to the $\overrightarrow{f}$ of the simplicial complex we construct.  Following \cite{DJ} pg. 430 we have:
+Later we will consider $\mathcal{K} = C^j(R_G)$ (for some positive integer $j$) and then analyze certain inequalities derived from the $g$-theorem.  To do so requires the analysis of the \textit{$h$-vector} (denoted $\overrightarrow{h}$) of the dual and how it is related to the $\overrightarrow{f}$ of the simplicial complex we construct.  Following \cite{DJ} pg. 430 we have:
 
 
 %Given a simplicial complex $\mathcal{K}$ and its dual $\mathcal{K^*}$ there are associated vectors
@@ -743,13 +743,9 @@ More is true, using the cone it is possible to construct arbitrarily many bit se
 
 \section{Bit Conversions} \label{bitconversions}
 
-The experimental implementation uses arbitrary-sized integers to represent vector elements, and a vector is then implemented as a sequence of these integers.
+The experimental implementation uses arbitrary-sized integers to represent vector components, then this vector is converted into a sequence of integers.
 Since the NIST test suite \cite{NIST} expects its input to be a binary file, we must convert a sequence of integers into the corresponding binary bit-stream.
-To do this we iterate over the vector elements, creating a binary representation of each integer, and concatenating this binary representation onto the output file.
-
-Care must be taken when doing this to use a bit-wise approach instead of a byte-wise approach.
-In a byte-wise approach the binary representation of each integer will begin on a byte boundary, and since most integers will not completely fill their most-significant byte we will have up to 7 extraneous leading zero bits.
-In practice, this means that the binary representations of each integer should be bit-shifted before concatenation, to avoid these leading zero bits.
+To do this we, iterate over the vector components to generate a binary representation of each integer.  We then concatenate this binary representation onto the output file.  Care must be taken; it is important to use a bit-wise approach instead of a byte-wise approach.  In a byte-wise approach, the binary representation of each integer will begin on a byte boundary, and since most integers will not completely fill their most-significant byte, there will be up to 7 extraneous leading zero bits.  In practice, this means that the binary representations of each integer should be bit-shifted before concatenation, to avoid these leading zero bits.
 
 To illustrate the importance of this point, our initial implementation in~\cite{ALDH} has a minor bug in the bit-shifting code that is only triggered for certain byte values, and when triggered drops a 0-bit from the output stream.
 Despite the relative rarity of this bug being triggered, the NIST test suite did detect its non-random contributions to the output file, as can be seen in Tables 1, 3, 13, and 15 in~\cite{ALDH}, which show a noticeable ``clustering'' effect towards $p$-values of 0.
@@ -869,18 +865,18 @@ In the current implementation used in this paper this bug has been fixed.
 % The first set of 12 graphs therefore shows the results of running the NIST test suite's 12 major tests on 100 different data sets
 
 \sloppy
-The algorithms described in the previous section allow us to perform different operations on simplicial complex vectors. These vectors will increment in size as a result of the coning operation, but we can also start with a large vector to operate. The resulting vectors are converted to a stream of bits, which we then use as input to the National Institute of Standards and Technology (NIST) statistical test suite. You can download the suite at the following url:  \url{https://csrc.nist.gov/Projects/Random-Bit-Generation/Documentation-and-Software} 
+The algorithms described in the previous section allow us to perform different operations on simplicial complex vectors. These vectors will increase in size incrementally as a result of applying the coning operation.  However, it is possible to start with a large arbitrary vector as our initial input. The resulting vectors are converted to a stream of bits, which we then use as input to the National Institute of Standards and Technology (NIST) statistical test suite. You can download the suite at the following url:  \url{https://csrc.nist.gov/Projects/Random-Bit-Generation/Documentation-and-Software}
 
-The suite requires a bit stream input from a random number generator that contains at least 10 megabits of input data.  For each bit stream, the NIST test suite will output a report that shows in detail the $p$-values associated with each of the tests that the suite contains. 
+The suite requires a bit stream input from a random number generator that contains at least 10 megabits of input data.  For each bit stream, the NIST test suite will output a report that shows in detail the $p$-values associated with each of the tests that the suite contains.
 
 %Rerunning experiments using version 2.0 of the code.
 Recall, one theme of the paper is to show that the NIST test suite cannot detect certain non-random sequences that arise from combinatorial constructions.  To this end we conducted three experiments following these steps:
 
 %We explored the effect of symmetry in $h$-vectors on the resulting dual $f$-vectors. To this end, we ran three sets of experiments as follows:
 \begin{enumerate}
-\item Step 1:  Create an $h$-vector consisting of all ones coming from the standard $n$-simplex, $\Delta^n$.   
-\item Step 2:  Compute the dual $f$-vector corresponding to the $h$-vector from step one.  
-\item Step 3:  Compute the $k^{th}$ cone on the $f$-vector from the previous step.  i.e., $C^k(K)$ where $K$ is the simplicial complex dual to $\Delta^n$ and $ 0 \leq k \leq q$ for some $q$. (first experiment only)
+\item Step 1:  Create an $h$-vector consisting of all ones coming from the standard $n$-simplex, $\Delta^n$.
+\item Step 2:  Compute the $f$-vector of the dual $\mathcal{K}$ corresponding to $\Delta^n$ from the previous step with its given $h$-vector from step one.
+\item Step 3:  Compute $C^k(\mathcal{K})$ where $ 0 \leq k \leq q$ for some $q$ and the resulting $f$-vector from the first experiment only.
 \item Run the resulting bit pattern from Step 3 through the NIST test suite.
 \end{enumerate}
 
@@ -897,7 +893,7 @@ Recall, one theme of the paper is to show that the NIST test suite cannot detect
 A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a $p$-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph (See Figure~\ref{fig:random} and ~\ref{fig:nonrandom}). The sparklines represent the trend of all NIST tests, which if close to 0.0 or 1.0 would look like a flatline. The time required to do this using a naive implementation on a modern consumer CPU (Intel Core i5-4590) is 2.3 seconds, which is consistent with our previous tests performed in~\cite{ALDH}. This is therefore a gross upper bound. %\textcolor{red}{is this an obvious fact?  If so, ok to leave.  If not, then some explanation is needed here}
 
 
-For the first experiment, we fix an $h$-vector of length 3751 consisting of all ones.  So this is the $h$-vector of $\Delta^{3751}$.  We proceed to steps 2 and 3 and apply the cone to the dual $f$-vector.  Let $0 \leq k \leq 99$.  Namely,  vary the number of coning operations from 0 to 99 times on the dual complex $K$ (see Figure~\ref{fig:conings}) Also see the sample scatter plots on Figures~\ref{fig:approxentropy21},~\ref{fig:linearcomplexity21} and~\ref{fig:rank21}, which show the $p$-value distributions and also illustrate the fact that the NIST test suite is unable to detect non-randomness.   %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b'
+For the first experiment, we fix an $h$-vector of length 3751 consisting of all ones.  So this is the $h$-vector of $\Delta^{3751}$.  We proceed to steps 2 and 3 and apply the cone to the dual simplicial complex then compute its $f$-vector.  Vary the number of coning operations from 0 to 99 times on the dual complex $\mathcal{K}$ for $0 \leq k \leq 99$.  Refer to (see Figure~\ref{fig:conings}) and the sample scatter plots on Figures~\ref{fig:approxentropy21},~\ref{fig:linearcomplexity21} and~\ref{fig:rank21}, which show the $p$-value distributions and also illustrate the fact that the NIST test suite is unable to detect non-randomness.   %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b'
 
 \begin{figure}[h!]
 \centering
@@ -930,8 +926,8 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent For the second experiment,  we decided to experiment with the NIST suite with simply converting the $h$-vector to its dual and without any coning operation. This should serve as a benchmark since there is no random process involved, thus the NIST suite should effectively indicate that the bit stream is non-random.  To this end we now vary the $h$-vector length from 3750 to 3849. So we have a collection of $h$-vectors all of whose components are ones corresponding to a set of standard simplicies:  $\{\Delta^i \;| \; 3750 \leq i \leq 3849\}$.  Here, the cone operation is not applied to the dual. However, the NIST test suite is unable to detect the non-randomness as it is seen in the sparklines in Figure~\ref{fig:lengths}.  We have also included scatter plots for the Approximate Entropy test (Figure~\ref{fig:approxentropy22}, the Linear Complexity test (Figure~\ref{fig:linearcomplexity22} and the Rank test (Figure~\ref{fig:rank22}.  %  '-p 3750 -f -b' through '-p 3849 -f -b'
-%\textcolor{red}{provide some reasoning as to why the vector length is varied and why that matters} 
+\indent For the second experiment, we computed the $f$-vector dual to the $h$-vector without applying the cone (or iterated cone). This should serve as a benchmark since there are no random processes involved.  As a result, the NIST suite should indicate that the bit stream is non-random.  To this end, vary the $h$-vector length from 3750 to 3849. So, we have a collection of $h$-vectors all of whose components are ones corresponding to a set of standard simplicies:  $\{\Delta^i \;| \; 3750 \leq i \leq 3849\}$.  Here, the cone operation is not applied to the dual. However, the NIST test suite is unable to detect the non-randomness as illustrated in the sparklines in Figure~\ref{fig:lengths}.  We have also included scatter plots for the Approximate Entropy test (Figure~\ref{fig:approxentropy22}, the Linear Complexity test (Figure~\ref{fig:linearcomplexity22} and the Rank test (Figure~\ref{fig:rank22}.  %  '-p 3750 -f -b' through '-p 3849 -f -b'
+%\textcolor{red}{provide some reasoning as to why the vector length is varied and why that matters}
 
 
 
@@ -965,7 +961,7 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent For our third and final experiment, again intrigued by the failure of the NIST suite to detect non-randomness in the previous run, we fix the $h$-vector length at 3750 and vary non-end \textcolor{red}{Explain what is meant by non-end elements and provide an example.  This is not clear to me} elements in the pattern from 1 to 100.  The cone is not applied to the dual. See Figures~\ref{fig:patterns},~\ref{fig:approxentropy23},~\ref{fig:linearcomplexity23} and~\ref{fig:rank23}  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
+\indent Motivated bythe failuer of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end \textcolor{red}{Explain what is meant by non-end elements and provide an example.  This is not clear to me} elements in the pattern from 1 to 100.  The cone is not applied to the dual. See Figures~\ref{fig:patterns},~\ref{fig:approxentropy23},~\ref{fig:linearcomplexity23} and~\ref{fig:rank23}  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
 
 
 
