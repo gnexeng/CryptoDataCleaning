@@ -870,7 +870,7 @@ The algorithms described in the previous section allow us to perform different o
 The suite requires a bit stream input from a random number generator that contains at least 10 megabits of input data.  For each bit stream, the NIST test suite will output a report that shows in detail the $p$-values associated with each of the tests that the suite contains.
 
 %Rerunning experiments using version 2.0 of the code.
-Recall, one theme of the paper is to show that the NIST test suite cannot detect certain non-random sequences that arise from combinatorial constructions.  To this end we conducted three experiments following these steps:
+Recall, one theme of the paper is to show that the NIST test suite cannot detect certain non-random sequences that arise from combinatorial constructions.  We conducted three sets of experiments, representing tests along three different orthogonal axes, the h-vector length, the number of coning operations, and the contents of the h-vector. Our experiments follow these steps:
 
 %We explored the effect of symmetry in $h$-vectors on the resulting dual $f$-vectors. To this end, we ran three sets of experiments as follows:
 \begin{enumerate}
@@ -890,7 +890,7 @@ Recall, one theme of the paper is to show that the NIST test suite cannot detect
 \end{figure}
 
 
-A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a $p$-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph (See Figure~\ref{fig:random} and ~\ref{fig:nonrandom}). The sparklines represent the trend of all NIST tests, which if close to 0.0 or 1.0 would look like a flatline. The time required to do this using a naive implementation on a modern consumer CPU (Intel Core i5-4590) is 2.3 seconds, which is consistent with our previous tests performed in~\cite{ALDH}. This is therefore a gross upper bound. %\textcolor{red}{is this an obvious fact?  If so, ok to leave.  If not, then some explanation is needed here}
+A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a $p$-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph (See Figure~\ref{fig:random} and ~\ref{fig:nonrandom}). The sparklines represent the trend of all NIST tests, which if close to 0.0 or 1.0 would look like a flatline. The time required to do this using a naive implementation on a modern consumer CPU (Intel Core i5-4590) was 2.3 seconds in our previous publication (see ~\cite{ALHD}. However, performance of the code improved due to optimizations and significant algorithmic improvements.  %\textcolor{red}{is this an obvious fact?  If so, ok to leave.  If not, then some explanation is needed here}
 
 
 For the first experiment, we fix an $h$-vector of length 3751 consisting of all ones.  So this is the $h$-vector of $\Delta^{3751}$.  We proceed to steps 2 and 3 and apply the cone to the dual simplicial complex then compute its $f$-vector.  Vary the number of coning operations from 0 to 99 times on the dual complex $\mathcal{K}$ for $0 \leq k \leq 99$.  See Figure~\ref{fig:conings}) in Appendix~\ref{first-appendix} and the sample scatter plots on Figures~\ref{fig:approxentropy21},~\ref{fig:linearcomplexity21} and~\ref{fig:rank21}, which show the $p$-value distributions and also illustrate the fact that the NIST test suite is unable to detect non-randomness.   %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b'
@@ -966,7 +966,12 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent Motivated by the failure of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end \textcolor{red}{Explain what is meant by non-end elements and provide an example.  This is not clear to me} elements in the pattern from 1 to 100.  The cone is not applied to the dual. As with the previous two experiments, we included the sparklines (see Figure~\ref{fig:patterns} in Appendix~\ref{first-appendix}) and three scatter plots for the Approximate Entropy test (see Figure~\ref{fig:approxentropy23}), the Linear Complexity test (see Figure~\ref{fig:linearcomplexity23}) and the Rank test (see Figure~\ref{fig:rank23}).  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
+\indent Motivated by the failure of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end elements in the pattern from 1 to 100.  
+
+% To be edited. 
+%The contents of the h-vector can be all-1’s, or it can be any other integer as long as the two end elements are 1. From the command-line flag “-i” in those comments, this must have been version 2.1.0 or earlier. “-i 4” in that version meant “make all the interior elements have the value 4”. 
+
+The cone is not applied to the dual. As with the previous two experiments, we included the sparklines (see Figure~\ref{fig:patterns} in Appendix~\ref{first-appendix}) and three scatter plots for the Approximate Entropy test (see Figure~\ref{fig:approxentropy23}), the Linear Complexity test (see Figure~\ref{fig:linearcomplexity23}) and the Rank test (see Figure~\ref{fig:rank23}).  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
 
 
 
