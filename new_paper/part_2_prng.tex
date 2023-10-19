@@ -116,7 +116,7 @@ From a testing perspective the main results are as follows: %\textcolor{red}{tel
 
 \end{enumerate}
 
-The paper is set-up as follows.  In \S 3 we provide a brief overview of simplicial complexes and the algorithms used to generate $C^j(\mathcal{K})$.  We also discuss the notion of the $f$-vector and, for the convenience of the reader, list a few calculations made in \cite{ALDH}.  In \S 4 polyhedra and their duals are discussed along with their $f$ and $h$-vectors.  The relation between the $f$ and $h$-vectors is given as well as specific low dimensional examples.  For completeness, the $g$-Theorem is listed and a reference is provided for additional details.  The main theorems needed in the sequel are proved in this section too.  \S 5 contains a careful analysis of bit conversions.  Here, we discuss truncation methods that are used to ensure that the bit stream fits into the NIST suite.  \S 6 lists the algorithm to convert $f$-vectors to $h$-vectors and vice versa and \S 7 contains a summary of the results. \S8 is an Appendix and it contains additional commentary regarding the original code \cite{ALDH}, the improvement that was made and how to replicate the new and improved results.
+The paper is set-up as follows.  In \S 3 we provide a brief overview of simplicial complexes and the algorithms used to generate $C^j(\mathcal{K})$.  We also discuss the notion of the $f$-vector and, for the convenience of the reader, list a few calculations made in \cite{ALDH}.  In \S 4 polyhedra and their duals are discussed along with their $f$ and $h$-vectors.  The relation between the $f$ and $h$-vectors is given as well as specific low dimensional examples.  For completeness, the $g$-Theorem is listed and a reference is provided for additional details.  The main theorems needed in the sequel are proved in this section too.  \S 5 contains a careful analysis of bit conversions.  Here, we discuss truncation methods that are used to ensure that the bit-stream fits into the NIST suite.  \S 6 lists the algorithm to convert $f$-vectors to $h$-vectors and vice versa and \S 7 contains a summary of the results. \S8 is an Appendix and it contains additional commentary regarding the original code \cite{ALDH}, the improvement that was made and how to replicate the new and improved results.
 
 \section{Simplicial Complexes and Iterated Cones}
 
@@ -867,17 +867,17 @@ In the current implementation used in this paper this bug has been fixed.
 \sloppy
 The algorithms described in the previous section allow us to perform different operations on simplicial complex vectors. These vectors will increase in size incrementally as a result of applying the coning operation.  However, it is possible to start with a large arbitrary vector as our initial input. The resulting vectors are converted to a stream of bits, which we then use as input to the National Institute of Standards and Technology (NIST) statistical test suite. You can download the suite at the following url:  \url{https://csrc.nist.gov/Projects/Random-Bit-Generation/Documentation-and-Software}
 
-The suite requires a bit stream input from a random number generator that contains at least 10 megabits of input data.  For each bit stream, the NIST test suite will output a report that shows in detail the $p$-values associated with each of the tests that the suite contains.
+The suite requires a bit-stream input from a random number generator that contains at least 10 megabits of input data. For each bit-stream, the NIST test suite will output a report that shows in detail the $p$-values associated with each of the tests that the suite contains.
 
 %Rerunning experiments using version 2.0 of the code.
-Recall, one theme of the paper is to show that the NIST test suite cannot detect certain non-random sequences that arise from combinatorial constructions.  We conducted three sets of experiments, representing tests along three different orthogonal axes, the h-vector length, the number of coning operations, and the contents of the h-vector. Our experiments follow these steps:
+Recall that one theme of the paper is to show that the NIST test suite cannot detect certain non-random sequences that arise from combinatorial constructions. We conducted three sets of experiments, representing tests along three different orthogonal axes, the $h$-vector length, the number of coning operations, and the contents of the $h$-vector. Our first experiment follows these steps:
 
 %We explored the effect of symmetry in $h$-vectors on the resulting dual $f$-vectors. To this end, we ran three sets of experiments as follows:
 \begin{enumerate}
 \item Step 1:  Create an $h$-vector consisting of all ones coming from the standard $n$-simplex, $\Delta^n$.
 \item Step 2:  Compute the $f$-vector of the dual $\mathcal{K}$ corresponding to $\Delta^n$ from the previous step with its given $h$-vector from step one.
 \item Step 3:  Compute $C^k(\mathcal{K})$ where $ 0 \leq k \leq q$ for some $q$ and the resulting $f$-vector from the first experiment only.
-\item Run the resulting bit pattern from Step 3 through the NIST test suite.
+\item Run the resulting bit sequence (bit-stream) from Step 3 through the NIST test suite.
 \end{enumerate}
 
 %\textcolor{red}{Insert some pics that describe random versus non-random as mentioned in my email}
@@ -886,12 +886,11 @@ Recall, one theme of the paper is to show that the NIST test suite cannot detect
    \subfloat[random]{\includegraphics[width=.5\textwidth]{./charts/random-sparkline.png}\label{fig:random}}
   \hfill
    \subfloat[non-random]{\includegraphics[width=.5\textwidth]{./charts/non-random-sparkline.png}\label{fig:nonrandom}}
-  \caption{Sparklines showing the difference between expected NIST results if bitstream is identified as random (left) vs non-random (right).}
+  \caption{Sparklines showing the difference between expected NIST results if bit-stream is identified as random (left) vs non-random (right).}
 \end{figure}
 
 
-A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a $p$-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph (See Figure~\ref{fig:random} and ~\ref{fig:nonrandom}). The sparklines represent the trend of all NIST tests, which if close to 0.0 or 1.0 would look like a flatline. The time required to do this using a naive implementation on a modern consumer CPU (Intel Core i5-4590) was 2.3 seconds in our previous publication (see ~\cite{ALHD}. However, performance of the code improved due to optimizations and significant algorithmic improvements.  %\textcolor{red}{is this an obvious fact?  If so, ok to leave.  If not, then some explanation is needed here}
-
+A non-random pattern should be consistently detected by the NIST test suite and shown with every data set having a $p$-value of close to 1.0 or close to 0.0, which will appear as a ``clustering'' of points towards the top or bottom of the graph, also resembling a flatline (See Figure~\ref{fig:random} and ~\ref{fig:nonrandom}). These sparklines represent the trend of all NIST tests for different variations of the input $h$-vectors. The time required to run these tests on a modern consumer CPU (Intel Core i5-4590) was originally 2.3 seconds as per our previous publication~\cite{ALDH}. However, performance of the code improved due to optimizations and significant algorithmic improvements. We have also updated the results from our previous publication due to these code improvements, and we added samples of the results to the Appendix~\ref{second-appendix}. 
 
 For the first experiment, we fix an $h$-vector of length 3751 consisting of all ones.  So this is the $h$-vector of $\Delta^{3751}$.  We proceed to steps 2 and 3 and apply the cone to the dual simplicial complex then compute its $f$-vector.  Vary the number of coning operations from 0 to 99 times on the dual complex $\mathcal{K}$ for $0 \leq k \leq 99$.  See Figure~\ref{fig:conings}) in Appendix~\ref{first-appendix} and the sample scatter plots on Figures~\ref{fig:approxentropy21},~\ref{fig:linearcomplexity21} and~\ref{fig:rank21}, which show the $p$-value distributions and also illustrate the fact that the NIST test suite is unable to detect non-randomness.   %    '-p 3751 -f -c 0 -b' through '-p 3751 -f -c 99 -b'
 
@@ -930,7 +929,7 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent For the second experiment, we computed the $f$-vector dual to the $h$-vector without applying the cone (or iterated cone). This should serve as a benchmark since there are no random processes involved.  As a result, the NIST suite should indicate that the bit stream is non-random.  To this end, vary the $h$-vector length from 3750 to 3849. So, we have a collection of $h$-vectors all of whose components are ones corresponding to a set of standard simplicies:  $\{\Delta^i \;| \; 3750 \leq i \leq 3849\}$.  Here, the cone operation is not applied to the dual. However, the NIST test suite is unable to detect the non-randomness as illustrated in the sparklines in Figure~\ref{fig:lengths} in Appendix~\ref{first-appendix}.  We have also included scatter plots for the Approximate Entropy test (Figure~\ref{fig:approxentropy22}), the Linear Complexity test (Figure~\ref{fig:linearcomplexity22}) and the Rank test (Figure~\ref{fig:rank22}).  %  '-p 3750 -f -b' through '-p 3849 -f -b'
+\indent For the second experiment, we computed the $f$-vector dual to the $h$-vector without applying the cone to the dual (or iterated cone). This corresponds to steps 2 and 3 from the first experiment. We vary the $h$-vector length from 3750 to 3849. So, we have a collection of $h$-vectors all of whose components are ones corresponding to a set of standard simplicies:  $\{\Delta^i \;| \; 3750 \leq i \leq 3849\}$.  This should serve as a benchmark since there are no random processes involved that may result from the iterated coning operation. Furthermore, we expect the NIST suite to indicate that the bit-stream is non-random. However, the NIST test suite is unable to detect the non-randomness as illustrated in the sparklines in Figure~\ref{fig:lengths} in Appendix~\ref{first-appendix}.  We have also included sample scatter plots for the Approximate Entropy test (Figure~\ref{fig:approxentropy22}), the Linear Complexity test (Figure~\ref{fig:linearcomplexity22}) and the Rank test (Figure~\ref{fig:rank22}).  %  '-p 3750 -f -b' through '-p 3849 -f -b'
 %\textcolor{red}{provide some reasoning as to why the vector length is varied and why that matters}
 
 
@@ -966,7 +965,7 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent Motivated by the failure of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end elements in the pattern from 1 to 100. The contents of the $h$-vector can be all-1’s, or it can be any other integer as long as the two end elements are 1. Varying the non-end elements from 1 to 100 literally means creating the following $h$-vectors: 
+\indent Motivated by the failure of the NIST test suite to detect non-random phenomena we conducted a third experiment. Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end elements in the pattern from 1 to 100. The contents of the $h$-vector can be all-1’s, or it can be any other integer as long as the two end elements are 1. Varying the non-end elements from 1 to 100 literally means creating the following $h$-vectors: 
 
 \begin{itemize}
 \centering
@@ -983,7 +982,7 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \item[] 1 100 100 … 100 100 1
 \end{itemize}
 
-The cone is not applied to the dual. As with the previous two experiments, we included the sparklines (see Figure~\ref{fig:patterns} in Appendix~\ref{first-appendix}) and three scatter plots for the Approximate Entropy test (see Figure~\ref{fig:approxentropy23}), the Linear Complexity test (see Figure~\ref{fig:linearcomplexity23}) and the Rank test (see Figure~\ref{fig:rank23}).  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
+We compute the $f$-vector dual, but we do not apply any coning operations, again following steps 1 and 2 from the first experiment. As with the previous two experiments, we included the sparklines (see Figure~\ref{fig:patterns} in Appendix~\ref{first-appendix}) and sample scatter plots for the Approximate Entropy test (see Figure~\ref{fig:approxentropy23}), the Linear Complexity test (see Figure~\ref{fig:linearcomplexity23}) and the Rank test (see Figure~\ref{fig:rank23}).  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
 
 
 
@@ -1024,7 +1023,7 @@ The cone is not applied to the dual. As with the previous two experiments, we in
 \appendix
 
 \section{First Appendix} \label{first-appendix}
-This appendix includes the sparklines for all three experiments described in the Results section~\ref{results}. Each sparkline represents all p-values for all tests of the NIST suite for a particular bit stream input. 
+This appendix includes the sparklines for all three experiments described in the Results section~\ref{results}. Each sparkline represents all p-values for all tests of the NIST suite for a particular bit-stream input. 
 
 \begin{figure}[h!]
 \centering
@@ -1055,11 +1054,14 @@ This appendix includes the sparklines for all three experiments described in the
 % Began from the $f$-vector 3,3 and coned it from 3750 to 3849 times (100 runs)
 % Took the $f$-vector 4,5, then the $f$-vector 5,7, then the $f$-vector 6,9, etc, up to the $f$-vector 103,203 and coned each 3750 times (100 runs)
 
-Since our first publication~\cite{ALDH} we updated our code. Version 2.0 of the code fixes several bugs, including one where 0's were not being properly appended to the bit-stream. As a result it causes fewer false positives from the NIST test suite. We have posted the new results in the following GitHub repository:
+Since our first publication~\cite{ALDH} we updated our code. Version 2.0 of the code fixes several bugs, including one where 0's were not being properly appended to the bit-stream. As a result it causes fewer false positives from the NIST test suite. We have posted the code to run all the tests in this paper, the results to all our experiments and the updated results from our previous publication, with the optimized code v2.0, in the following GitHub repository:
 \begin{center}
 \url{https://GitHub.com/gnexeng/coning-analysis}
 \end{center}
-The following is a sample of the results.
+
+\vspace{1cm}
+
+The following is a sample of the updated results from our first publication~\cite{ALDH}
 
 \begin{figure}[h!]
 \centering
