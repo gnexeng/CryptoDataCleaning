@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.22)  19 OCT 2023 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.22)  19 OCT 2023 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1165,13 +1165,13 @@ png> <./charts/Rank_e_2_2.png>]
 File: ./charts/ApproximateEntropy_e_2_3.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_e_2_3.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_e_2_3.png  used on input l
-ine 990.
+ine 1002.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 <./charts/LinearComplexity_e_2_3.png, id=353, 686.565pt x 497.86pt>
 File: ./charts/LinearComplexity_e_2_3.png Graphic file (type png)
 <use ./charts/LinearComplexity_e_2_3.png>
 Package pdftex.def Info: ./charts/LinearComplexity_e_2_3.png  used on input lin
-e 998.
+e 1010.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 
@@ -1180,7 +1180,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <./charts/Rank_e_2_3.png, id=354, 686.565pt x 497.86pt>
 File: ./charts/Rank_e_2_3.png Graphic file (type png)
 <use ./charts/Rank_e_2_3.png>
-Package pdftex.def Info: ./charts/Rank_e_2_3.png  used on input line 1005.
+Package pdftex.def Info: ./charts/Rank_e_2_3.png  used on input line 1017.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1193,13 +1193,13 @@ png> <./charts/Rank_e_2_3.png>]
 File: ./charts/varying-conings-v2-alt.png Graphic file (type png)
 <use ./charts/varying-conings-v2-alt.png>
 Package pdftex.def Info: ./charts/varying-conings-v2-alt.png  used on input lin
-e 1020.
+e 1032.
 (pdftex.def)             Requested size: 71.99933pt x 431.98595pt.
 <./charts/varying-lengths-v2-alt.png, id=372, 181.67876pt x 1406.25375pt>
 File: ./charts/varying-lengths-v2-alt.png Graphic file (type png)
 <use ./charts/varying-lengths-v2-alt.png>
 Package pdftex.def Info: ./charts/varying-lengths-v2-alt.png  used on input lin
-e 1027.
+e 1039.
 (pdftex.def)             Requested size: 71.99933pt x 431.98595pt.
 
 
@@ -1209,7 +1209,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./charts/varying-patterns-v2-alt.png Graphic file (type png)
 <use ./charts/varying-patterns-v2-alt.png>
 Package pdftex.def Info: ./charts/varying-patterns-v2-alt.png  used on input li
-ne 1034.
+ne 1046.
 (pdftex.def)             Requested size: 71.99933pt x 431.98595pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1222,13 +1222,13 @@ g>] [30 <./charts/varying-patterns-v2-alt.png>]
 File: ./charts/ApproximateEntropy_3_3.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_3_3.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_3_3.png  used on input lin
-e 1054.
+e 1066.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 <./charts/ApproximateEntropy_4_5.png, id=392, 686.565pt x 496.85625pt>
 File: ./charts/ApproximateEntropy_4_5.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_4_5.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_4_5.png  used on input lin
-e 1060.
+e 1072.
 (pdftex.def)             Requested size: 343.28166pt x 248.4275pt.
 
 
@@ -1238,7 +1238,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./charts/LinearComplexity_3_3.png Graphic file (type png)
 <use ./charts/LinearComplexity_3_3.png>
 Package pdftex.def Info: ./charts/LinearComplexity_3_3.png  used on input line 
-1066.
+1078.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1247,7 +1247,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ./charts/LinearComplexity_4_5.png Graphic file (type png)
 <use ./charts/LinearComplexity_4_5.png>
 Package pdftex.def Info: ./charts/LinearComplexity_4_5.png  used on input line 
-1072.
+1084.
 (pdftex.def)             Requested size: 342.77979pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1255,7 +1255,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <./charts/Rank_3_3.png, id=395, 686.565pt x 497.86pt>
 File: ./charts/Rank_3_3.png Graphic file (type png)
 <use ./charts/Rank_3_3.png>
-Package pdftex.def Info: ./charts/Rank_3_3.png  used on input line 1078.
+Package pdftex.def Info: ./charts/Rank_3_3.png  used on input line 1090.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1263,7 +1263,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <./charts/Rank_4_5.png, id=396, 686.565pt x 497.86pt>
 File: ./charts/Rank_4_5.png Graphic file (type png)
 <use ./charts/Rank_4_5.png>
-Package pdftex.def Info: ./charts/Rank_4_5.png  used on input line 1084.
+Package pdftex.def Info: ./charts/Rank_4_5.png  used on input line 1096.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1286,10 +1286,10 @@ Package rerunfilecheck Info: File `part_2_prng.out' has not changed.
 (rerunfilecheck)             Checksum: A9FD4DD56B930939A11D88F35B6ED7B4;1531.
  ) 
 Here is how much of TeX's memory you used:
- 26503 strings out of 476025
- 475798 string characters out of 5790017
+ 26504 strings out of 476025
+ 475814 string characters out of 5790017
  1873388 words of memory out of 5000000
- 46202 multiletter control sequences out of 15000+600000
+ 46203 multiletter control sequences out of 15000+600000
  525748 words of font info for 88 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  102i,14n,104p,3222b,749s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1316,7 +1316,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf
 dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on part_2_prng.pdf (35 pages, 678290 bytes).
+Output written on part_2_prng.pdf (35 pages, 679012 bytes).
 PDF statistics:
  560 PDF objects out of 1000 (max. 8388607)
  432 compressed objects within 5 object streams

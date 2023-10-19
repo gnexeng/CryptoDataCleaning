@@ -50,7 +50,7 @@ Saint Peter, MN 56082}
 South Rd and Ellis Ave, Mankato, MN 56001}
 \email{jonathan.hardwick@gmail.com}
 
-\keywords{Cryptography, Pseudo-random number generator, f-vector, h-vector, Combinatorial Cryptology, Bit sequences, NIST}
+\keywords{Cryptography, Pseudo-random number generator, $f$-vector, $h$-vector, Combinatorial Cryptology, Bit sequences, NIST}
 
 \begin{abstract}
 In this paper we construct families of bit sequences using combinatorial methods.  Each sequence is derived by converting a collection of numbers encoding certain combinatorial numerics from objects exhibiting symmetry in various dimensions.  Using the algorithms first described in \cite{ALDH} we show that the NIST testing suite described in publication 800-22 does not detect these symmetries hidden within these sequences.
@@ -966,10 +966,22 @@ For the first experiment, we fix an $h$-vector of length 3751 consisting of all 
 \end{figure}
 
 \clearpage
-\indent Motivated by the failure of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end elements in the pattern from 1 to 100.  
+\indent Motivated by the failure of the NIST test suite to detect non-random phenomena a third experiment was conducted.  Here, the $h$-vector was fixed at a length of 3750 and we varied the non-end elements in the pattern from 1 to 100. The contents of the h-vector can be all-1’s, or it can be any other integer as long as the two end elements are 1. Varying the non-end elements from 1 to 100 literally means creating the following h-vectors: 
 
-% To be edited. 
-%The contents of the h-vector can be all-1’s, or it can be any other integer as long as the two end elements are 1. From the command-line flag “-i” in those comments, this must have been version 2.1.0 or earlier. “-i 4” in that version meant “make all the interior elements have the value 4”. 
+\begin{itemize}
+\centering
+\item[] 1 1 1 ... 1 1 1
+
+\item[] 1 2 2 … 2 2 1
+
+\item[] 1 3 3 … 3 3 1
+
+\item[] 1 4 4 … 4 4 1
+
+\item[] …
+
+\item[] 1 100 100 … 100 100 1
+\end{itemize}
 
 The cone is not applied to the dual. As with the previous two experiments, we included the sparklines (see Figure~\ref{fig:patterns} in Appendix~\ref{first-appendix}) and three scatter plots for the Approximate Entropy test (see Figure~\ref{fig:approxentropy23}), the Linear Complexity test (see Figure~\ref{fig:linearcomplexity23}) and the Rank test (see Figure~\ref{fig:rank23}).  %   '-p 3750 -i 1 -f -b' through '-p 3750 -i 100 -f -b'
 
