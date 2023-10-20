@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.22)  19 OCT 2023 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.22)  20 OCT 2023 11:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1087,68 +1087,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 728--729
 
 [17]
 
-LaTeX Warning: Reference `appendix' on page 18 undefined on input line 736.
+LaTeX Warning: Reference `appendix' on page 18 undefined on input line 735.
 
 [18] [19] [20]
-<./charts/random-sparkline.png, id=281, 181.67876pt x 15.05624pt>
+<./charts/random-sparkline.png, id=283, 181.67876pt x 15.05624pt>
 File: ./charts/random-sparkline.png Graphic file (type png)
 <use ./charts/random-sparkline.png>
-Package pdftex.def Info: ./charts/random-sparkline.png  used on input line 886.
+Package pdftex.def Info: ./charts/random-sparkline.png  used on input line 889.
 
 (pdftex.def)             Requested size: 180.0pt x 14.91743pt.
-<./charts/non-random-sparkline.png, id=283, 181.67876pt x 15.05624pt>
+<./charts/non-random-sparkline.png, id=285, 181.67876pt x 15.05624pt>
 File: ./charts/non-random-sparkline.png Graphic file (type png)
 <use ./charts/non-random-sparkline.png>
 Package pdftex.def Info: ./charts/non-random-sparkline.png  used on input line 
-888.
+891.
 (pdftex.def)             Requested size: 180.0pt x 14.91743pt.
- [21 <./charts/random-sparkline.png> <./charts/non-random-sparkline.png>]
-<./charts/ApproximateEntropy_e_2_1.png, id=307, 686.565pt x 497.86pt>
+ [21]
+<./charts/ApproximateEntropy_e_2_1.png, id=305, 686.565pt x 497.86pt>
 File: ./charts/ApproximateEntropy_e_2_1.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_e_2_1.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_e_2_1.png  used on input l
-ine 909.
+ine 912.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
-<./charts/LinearComplexity_e_2_1.png, id=308, 686.565pt x 497.86pt>
+<./charts/LinearComplexity_e_2_1.png, id=306, 686.565pt x 497.86pt>
 File: ./charts/LinearComplexity_e_2_1.png Graphic file (type png)
 <use ./charts/LinearComplexity_e_2_1.png>
 Package pdftex.def Info: ./charts/LinearComplexity_e_2_1.png  used on input lin
-e 918.
+e 921.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/Rank_e_2_1.png, id=309, 686.565pt x 497.86pt>
+<./charts/Rank_e_2_1.png, id=307, 686.565pt x 497.86pt>
 File: ./charts/Rank_e_2_1.png Graphic file (type png)
 <use ./charts/Rank_e_2_1.png>
-Package pdftex.def Info: ./charts/Rank_e_2_1.png  used on input line 927.
+Package pdftex.def Info: ./charts/Rank_e_2_1.png  used on input line 930.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22 <./charts/ApproximateEntropy_e_2_1.png>] [23 <./charts/LinearComplexity_e_2
-_1.png> <./charts/Rank_e_2_1.png>]
-<./charts/ApproximateEntropy_e_2_2.png, id=330, 686.565pt x 497.86pt>
+[22 <./charts/random-sparkline.png> <./charts/non-random-sparkline.png> <./char
+ts/ApproximateEntropy_e_2_1.png>] [23 <./charts/LinearComplexity_e_2_1.png> <./
+charts/Rank_e_2_1.png>]
+<./charts/ApproximateEntropy_e_2_2.png, id=331, 686.565pt x 497.86pt>
 File: ./charts/ApproximateEntropy_e_2_2.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_e_2_2.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_e_2_2.png  used on input l
-ine 948.
+ine 951.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
-<./charts/LinearComplexity_e_2_2.png, id=331, 686.565pt x 497.86pt>
+<./charts/LinearComplexity_e_2_2.png, id=332, 686.565pt x 497.86pt>
 File: ./charts/LinearComplexity_e_2_2.png Graphic file (type png)
 <use ./charts/LinearComplexity_e_2_2.png>
 Package pdftex.def Info: ./charts/LinearComplexity_e_2_2.png  used on input lin
-e 956.
+e 959.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/Rank_e_2_2.png, id=332, 686.565pt x 497.86pt>
+<./charts/Rank_e_2_2.png, id=333, 686.565pt x 497.86pt>
 File: ./charts/Rank_e_2_2.png Graphic file (type png)
 <use ./charts/Rank_e_2_2.png>
-Package pdftex.def Info: ./charts/Rank_e_2_2.png  used on input line 963.
+Package pdftex.def Info: ./charts/Rank_e_2_2.png  used on input line 966.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1157,118 +1158,121 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
  <./charts/ApproximateEntropy_e_2_2.png>] [25 <./charts/LinearComplexity_e_2_2.
 png> <./charts/Rank_e_2_2.png>]
-<./charts/ApproximateEntropy_e_2_3.png, id=354, 686.565pt x 497.86pt>
+<./charts/ApproximateEntropy_e_2_3.png, id=355, 686.565pt x 497.86pt>
 File: ./charts/ApproximateEntropy_e_2_3.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_e_2_3.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_e_2_3.png  used on input l
-ine 1001.
-(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
-<./charts/LinearComplexity_e_2_3.png, id=355, 686.565pt x 497.86pt>
-File: ./charts/LinearComplexity_e_2_3.png Graphic file (type png)
-<use ./charts/LinearComplexity_e_2_3.png>
-Package pdftex.def Info: ./charts/LinearComplexity_e_2_3.png  used on input lin
-e 1009.
+ine 1003.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/Rank_e_2_3.png, id=356, 686.565pt x 497.86pt>
+<./charts/LinearComplexity_e_2_3.png, id=356, 686.565pt x 497.86pt>
+File: ./charts/LinearComplexity_e_2_3.png Graphic file (type png)
+<use ./charts/LinearComplexity_e_2_3.png>
+Package pdftex.def Info: ./charts/LinearComplexity_e_2_3.png  used on input lin
+e 1011.
+(pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./charts/Rank_e_2_3.png, id=357, 686.565pt x 497.86pt>
 File: ./charts/Rank_e_2_3.png Graphic file (type png)
 <use ./charts/Rank_e_2_3.png>
-Package pdftex.def Info: ./charts/Rank_e_2_3.png  used on input line 1016.
+Package pdftex.def Info: ./charts/Rank_e_2_3.png  used on input line 1018.
 (pdftex.def)             Requested size: 287.99915pt x 180.00432pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [26
 
- <./charts/ApproximateEntropy_e_2_3.png>] [27 <./charts/LinearComplexity_e_2_3.
-png> <./charts/Rank_e_2_3.png>]
-<./charts/varying-conings-v2-alt.png, id=373, 181.67876pt x 1406.25375pt>
+] [27 <./charts/ApproximateEntropy_e_2_3.png> <./charts/LinearComplexity_e_2_3.
+png>] [28 <./charts/Rank_e_2_3.png>]
+<./charts/varying-conings-v2-alt.png, id=378, 181.67876pt x 1406.25375pt>
 File: ./charts/varying-conings-v2-alt.png Graphic file (type png)
 <use ./charts/varying-conings-v2-alt.png>
 Package pdftex.def Info: ./charts/varying-conings-v2-alt.png  used on input lin
-e 1031.
+e 1033.
 (pdftex.def)             Requested size: 71.99933pt x 431.98595pt.
-<./charts/varying-lengths-v2-alt.png, id=374, 181.67876pt x 1406.25375pt>
+<./charts/varying-lengths-v2-alt.png, id=379, 181.67876pt x 1406.25375pt>
 File: ./charts/varying-lengths-v2-alt.png Graphic file (type png)
 <use ./charts/varying-lengths-v2-alt.png>
 Package pdftex.def Info: ./charts/varying-lengths-v2-alt.png  used on input lin
-e 1038.
+e 1040.
 (pdftex.def)             Requested size: 71.99933pt x 431.98595pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/varying-patterns-v2-alt.png, id=375, 181.67876pt x 1406.25375pt>
+<./charts/varying-patterns-v2-alt.png, id=380, 181.67876pt x 1406.25375pt>
 File: ./charts/varying-patterns-v2-alt.png Graphic file (type png)
 <use ./charts/varying-patterns-v2-alt.png>
 Package pdftex.def Info: ./charts/varying-patterns-v2-alt.png  used on input li
-ne 1045.
+ne 1047.
 (pdftex.def)             Requested size: 71.99933pt x 431.98595pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28
+[29
 
- <./charts/varying-conings-v2-alt.png>] [29 <./charts/varying-lengths-v2-alt.pn
-g>] [30 <./charts/varying-patterns-v2-alt.png>]
-<./charts/ApproximateEntropy_3_3.png, id=394, 686.565pt x 497.86pt>
+ <./charts/varying-conings-v2-alt.png>] [30 <./charts/varying-lengths-v2-alt.pn
+g>] [31 <./charts/varying-patterns-v2-alt.png>]
+<./charts/ApproximateEntropy_3_3.png, id=401, 686.565pt x 497.86pt>
 File: ./charts/ApproximateEntropy_3_3.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_3_3.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_3_3.png  used on input lin
-e 1068.
+e 1070.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
-<./charts/ApproximateEntropy_4_5.png, id=395, 686.565pt x 496.85625pt>
+<./charts/ApproximateEntropy_4_5.png, id=402, 686.565pt x 496.85625pt>
 File: ./charts/ApproximateEntropy_4_5.png Graphic file (type png)
 <use ./charts/ApproximateEntropy_4_5.png>
 Package pdftex.def Info: ./charts/ApproximateEntropy_4_5.png  used on input lin
-e 1074.
+e 1076.
 (pdftex.def)             Requested size: 343.28166pt x 248.4275pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/LinearComplexity_3_3.png, id=396, 686.565pt x 497.86pt>
+<./charts/LinearComplexity_3_3.png, id=403, 686.565pt x 497.86pt>
 File: ./charts/LinearComplexity_3_3.png Graphic file (type png)
 <use ./charts/LinearComplexity_3_3.png>
 Package pdftex.def Info: ./charts/LinearComplexity_3_3.png  used on input line 
-1080.
+1082.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/LinearComplexity_4_5.png, id=397, 685.56125pt x 497.86pt>
+<./charts/LinearComplexity_4_5.png, id=404, 685.56125pt x 497.86pt>
 File: ./charts/LinearComplexity_4_5.png Graphic file (type png)
 <use ./charts/LinearComplexity_4_5.png>
 Package pdftex.def Info: ./charts/LinearComplexity_4_5.png  used on input line 
-1086.
+1088.
 (pdftex.def)             Requested size: 342.77979pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/Rank_3_3.png, id=398, 686.565pt x 497.86pt>
+<./charts/Rank_3_3.png, id=405, 686.565pt x 497.86pt>
 File: ./charts/Rank_3_3.png Graphic file (type png)
 <use ./charts/Rank_3_3.png>
-Package pdftex.def Info: ./charts/Rank_3_3.png  used on input line 1092.
+Package pdftex.def Info: ./charts/Rank_3_3.png  used on input line 1094.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./charts/Rank_4_5.png, id=399, 686.565pt x 497.86pt>
+<./charts/Rank_4_5.png, id=406, 686.565pt x 497.86pt>
 File: ./charts/Rank_4_5.png Graphic file (type png)
 <use ./charts/Rank_4_5.png>
-Package pdftex.def Info: ./charts/Rank_4_5.png  used on input line 1098.
+Package pdftex.def Info: ./charts/Rank_4_5.png  used on input line 1100.
 (pdftex.def)             Requested size: 343.28166pt x 248.92938pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[31
+[32
 
- <./charts/ApproximateEntropy_3_3.png>] [32 <./charts/ApproximateEntropy_4_5.pn
-g> <./charts/LinearComplexity_3_3.png>] [33 <./charts/LinearComplexity_4_5.png>
- <./charts/Rank_3_3.png>] [34 <./charts/Rank_4_5.png>] [35
+ <./charts/ApproximateEntropy_3_3.png>] [33 <./charts/ApproximateEntropy_4_5.pn
+g> <./charts/LinearComplexity_3_3.png>] [34 <./charts/LinearComplexity_4_5.png>
+ <./charts/Rank_3_3.png>] [35 <./charts/Rank_4_5.png>] [36
 
 ]
 (./part_2_prng.aux)
@@ -1279,11 +1283,11 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `part_2_prng.out' has not changed.
-(rerunfilecheck)             Checksum: A9FD4DD56B930939A11D88F35B6ED7B4;1531.
+(rerunfilecheck)             Checksum: A18FB999EC234AA4C6B69E90C27C0204;1486.
  ) 
 Here is how much of TeX's memory you used:
- 26504 strings out of 476025
- 475814 string characters out of 5790017
+ 26505 strings out of 476025
+ 475821 string characters out of 5790017
  1874388 words of memory out of 5000000
  46203 multiletter control sequences out of 15000+600000
  525748 words of font info for 88 fonts, out of 8000000 for 9000
@@ -1312,10 +1316,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf
 dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on part_2_prng.pdf (35 pages, 679616 bytes).
+Output written on part_2_prng.pdf (36 pages, 680932 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
- 125 named destinations out of 1000 (max. 500000)
+ 569 PDF objects out of 1000 (max. 8388607)
+ 440 compressed objects within 5 object streams
+ 126 named destinations out of 1000 (max. 500000)
  193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
