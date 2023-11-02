@@ -879,9 +879,9 @@ A non-random pattern should be consistently detected by the NIST test suite and 
 
 \begin{figure}[!htbp]
 \centering
-   \subfloat[random]{\includegraphics[width=.5\textwidth]{./charts/random-sparkline.png}\label{fig:random}}
+   \subfloat[random]{\includegraphics[width=.4\textwidth]{./charts/random-sparkline.png}\label{fig:random}}
   \hfill
-   \subfloat[non-random]{\includegraphics[width=.5\textwidth]{./charts/non-random-sparkline.png}\label{fig:nonrandom}}
+   \subfloat[non-random]{\includegraphics[width=.4\textwidth]{./charts/non-random-sparkline.png}\label{fig:nonrandom}}
   \caption{Sparklines showing the difference between expected NIST results if bit-stream is identified as random (left) vs non-random (right).}
 \end{figure}
 
@@ -914,6 +914,7 @@ For the first experiment, fix an $h$-vector of length 3751 consisting of all one
 \includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/LinearComplexity\_e\_2\_1.png}
 \label{fig:linearcomplexity21}
 \end{figure}
+
 
 
 
@@ -1061,43 +1062,78 @@ Since the appearance of ~\cite{ALDH} the code has been updated.  Version 2.0 of 
 
 The following is a sample of the updated results from our first publication~\cite{ALDH}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/ApproximateEntropy_3_3.png}
-\label{fig:approxentropy33}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/ApproximateEntropy_3_3.png}
+%\label{fig:approxentropy33}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/ApproximateEntropy_4_5.png}
+%\label{fig:approxentropy45}
+%\end{figure}
+
+\begin{figure}[h!] % Do not use only [h] in real documents.
+\begin{minipage}[t]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/ApproximateEntropy_3_3.png}
+%\caption{ figure}
+\end{minipage}\hfill
+\begin{minipage}[b]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/ApproximateEntropy_4_5.png}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/ApproximateEntropy_4_5.png}
-\label{fig:approxentropy45}
+
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/LinearComplexity_3_3.png}
+%\label{fig:linear33}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/LinearComplexity_4_5.png}
+%\label{fig:linear45}
+%\end{figure}
+
+
+\begin{figure}[h!] % Do not use only [h] in real documents.
+\begin{minipage}[t]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/LinearComplexity_3_3.png}
+%\caption{ figure}
+\end{minipage}\hfill
+\begin{minipage}[b]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/LinearComplexity_4_5.png}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/LinearComplexity_3_3.png}
-\label{fig:linear33}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/Rank_3_3.png}
+%\label{fig:rank33}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/Rank_4_5.png}
+%\label{fig:rank45}
+%\end{figure}
+\newpage
+
+\begin{figure}[h!] % Do not use only [h] in real documents.
+\begin{minipage}[t]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/Rank_3_3.png}
+%\caption{ figure}
+\end{minipage}\hfill
+\begin{minipage}[b]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/Rank_4_5.png}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/LinearComplexity_4_5.png}
-\label{fig:linear45}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/Rank_3_3.png}
-\label{fig:rank33}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/Rank_4_5.png}
-\label{fig:rank45}
-\end{figure}
-
-\clearpage
+%\clearpage
 \begin{thebibliography}{14}
 
 \bibitem{ALDH} Allen, D., La Luz, J., Salivia., G., Hardwick, J.,
