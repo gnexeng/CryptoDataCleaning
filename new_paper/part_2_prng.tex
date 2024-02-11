@@ -596,11 +596,6 @@ This can be written as $f_0 = (d-1)f_{d-1} - (d+1)(d-2)$ and to clarify that thi
 $f_0(P) = (d-1)f_{d-1}(P) - (d+1)(d-2)$
 \end{center}
 
-
-
-
-
-
 %$f_1 \leq \binom{f_0}{2}$ is equivalent to item $(3)$ in the $g$-Theorem for $i= 1$. For the applications in this paper, this particular upper bound is not sufficient to prove that the $f$-vectors we produce are sufficiently complicated.  Referring to \cite{BP1} we will analyze the inequality $f_1 \geq nf_0 - \binom{n+1}{2}$ and ultimately show that we can construct simplicial complexes for which it fails to hold.
 
 \begin{Remark}
@@ -737,8 +732,7 @@ We note that the $\overrightarrow{h}$ has a component $h_n$ but the entries of t
 
 \begin{Remark}
 There are families of bit sequences that are derived from symmetrical simplicial complexes and their successive cones that are determined to be random using the NIST test suite described in publication 800-22~\cite{NIST}.
-The key takeaway is that one starts with a combinatorial object with a clear pattern (symmetry) and dualizing it produces a simplicial complex that is highly symmetrical, yet the converted bit sequence shows up as random using the NIST test suite.
-More is true, using the cone it is possible to construct arbitrarily many bit sequences (derived from this symmetrical object) that the test suite deems random.
+The key takeaway is that one starts with a combinatorial object with a clear pattern (symmetry) and dualizing it produces a simplicial complex that is highly symmetrical, yet the converted bit sequence shows up as random using the NIST test suite. More is true, using the cone it is possible to construct arbitrarily many bit sequences (derived from this symmetrical object) that the test suite deems random.
 \end{Remark}
 
 \section{Bit Conversions} \label{bitconversions}
@@ -748,10 +742,10 @@ Since the NIST test suite \cite{NIST} expects its input to be a binary file, we 
 To do this we, iterate over the vector components to generate a binary representation of each integer.  We then concatenate this binary representation onto the output file.  Care must be taken; it is important to use a bit-wise approach instead of a byte-wise approach.  In a byte-wise approach, the binary representation of each integer will begin on a byte boundary, and since most integers will not completely fill their most-significant byte, there will be up to 7 extraneous leading zero bits.  In practice, this means that the binary representations of each integer should be bit-shifted before concatenation, to avoid these leading zero bits.
 
 To illustrate the importance of this point, our initial implementation in~\cite{ALDH} has a minor bug in the bit-shifting code that is only triggered for certain byte values, and when triggered drops a 0-bit from the output stream.
-Despite the relative rarity of this bug being triggered, the NIST test suite did detect its non-random contributions to the output file, as can be seen in Tables 1, 3, 13, and 15 in~\cite{ALDH}, which show a noticeable ``clustering'' effect towards $p$-values of 0.
-In the current implementation used in this paper this bug has been fixed.
+Despite the relative rarity of this bug being triggered, the NIST test suite did detect its non-random contributions to the output file, as can be seen in Tables 1, 3, 13, and 15 in~\cite{ALDH}, which show a noticeable ``clustering'' effect towards $p$-values of 0. In the current implementation used in this paper this bug has been fixed.
 
-\section{Algorithms} \label{algorithms} All our algorithms implemented are polynomial time and numeric in nature, since we only calculate a vector and its dual.
+\section{Algorithms}\label{algorithms} 
+All our algorithms implemented are polynomial time and numeric in nature, since we only calculate a vector and its dual.
 
 
 % To cone an $f$-vector:
@@ -762,14 +756,14 @@ In the current implementation used in this paper this bug has been fixed.
 %           yi = xi + xi-1 for 1 <= i < n + 1
 %
 \begin{center}
-\textbf{Algorithm for cone operation on $f$-vector of a simplicial complex}
+\textbf{Algorithm for cone operation on $f$-vector of a simplicial complex $\mathcal{K}$.}
 \end{center}
 
 \vspace{.1in}
 
 \begin{algorithmic}
-\State Input:  $\overrightarrow{f}(R_G)$ \textbf{as} $x_1,\dots,x_n$
-\State Compute  $C^{k}(R_G)$ \textbf{as} $y_1,\dots,y_{n+1}$
+\State Input:  $\overrightarrow{f}(\mathcal{K})$ \textbf{as} $x_1,\dots,x_n$
+\State Compute  $C^{k}(\mathcal{K})$ \textbf{as} $y_1,\dots,y_{n+1}$
 \For{$i =1,\dots,n+1$}
 \If{$i = 1$}
  \State $y_1 = x_1 + 1$
@@ -786,28 +780,28 @@ In the current implementation used in this paper this bug has been fixed.
 
 
 \begin{center}
-\textbf{Algorithm determining the $f$-vector of a $k$-cone}
+\textbf{Algorithm determining the $f$-vector of a $k$-cone on a simplicial complex $\mathcal{K}$.}
 \end{center}
 
 \vspace{.1in}
 \begin{algorithmic}
-\State Input : Random graph $R_G$
-\State Compute $\overrightarrow{f}(R_G)$
+\State Input : Simplicial complex $\mathcal{K}$
+\State Compute $\overrightarrow{f}(\mathcal{K})$
 \For{$k=1,\dots,n$}
-\State Compute $\overrightarrow{f}(C^k(R_G))$
+\State Compute $\overrightarrow{f}(C^k(\mathcal{K}))$
 \EndFor
 \end{algorithmic}
 
 \vspace{.5in}
 
 \begin{center}
-\textbf{Algorithm to return the dual $h$-vector of this $f$-vector, if $f$-vector comes from a simplicial complex.}
+\textbf{Algorithm to return the dual $h$-vector of the $f$-vector of $\mathcal{K}$ when $\mathcal{K}$ is dual to $P$.}
 \end{center}
 
 \vspace{.1in}
 
 \begin{algorithmic}
-\State Input: $\overrightarrow{f}(R_G)$
+\State Input: $\overrightarrow{f}(\mathcal{K})$
 \State Compute $\overrightarrow{h}(P)$
 \For{$k = 0,\dots,n$}
 \For{$i = 0,\dots,k$}
@@ -818,22 +812,21 @@ In the current implementation used in this paper this bug has been fixed.
 \EndIf
 \EndFor
 \EndFor
-
 \end{algorithmic}
 
 
 \vspace{.5in}
 
 \begin{center}
-\textbf{Return the dual $f$-vector of this $h$-vector, if $h$-vector comes from a polytope.}
+\textbf{Algorithm to return the dual $f$-vector of the $h$-vector of $P$ when $P$ is dual to $\mathcal{K}$.}
+%\textbf{Algorithm to return the dual $f$-vector of this $h$-vector, if $h$-vector comes from a polytope.}
 \end{center}
 
 \vspace{.1in}
 
-
 \begin{algorithmic}
 \State Input: $\overrightarrow{h}(P)$
-\State Compute $\overrightarrow{f}(R_G)$
+\State Compute $\overrightarrow{f}(\mathcal{K})$
 \For{$k = 0,\dots,n$}
 \For{$i = 0,\dots,k$}
 \If{$i = 0$}
@@ -887,9 +880,9 @@ A non-random pattern should be consistently detected by the NIST test suite and 
 
 \begin{figure}[!htbp]
 \centering
-   \subfloat[random]{\includegraphics[width=.5\textwidth]{./charts/random-sparkline.png}\label{fig:random}}
+   \subfloat[random]{\includegraphics[width=.4\textwidth]{./charts/random-sparkline.png}\label{fig:random}}
   \hfill
-   \subfloat[non-random]{\includegraphics[width=.5\textwidth]{./charts/non-random-sparkline.png}\label{fig:nonrandom}}
+   \subfloat[non-random]{\includegraphics[width=.4\textwidth]{./charts/non-random-sparkline.png}\label{fig:nonrandom}}
   \caption{Sparklines showing the difference between expected NIST results if bit-stream is identified as random (left) vs non-random (right).}
 \end{figure}
 
@@ -922,6 +915,7 @@ For the first experiment, fix an $h$-vector of length 3751 consisting of all one
 \includegraphics[width=0.8\linewidth, height=0.5\linewidth]{./charts/LinearComplexity\_e\_2\_1.png}
 \label{fig:linearcomplexity21}
 \end{figure}
+
 
 
 
@@ -1069,43 +1063,78 @@ Since the appearance of ~\cite{ALDH} the code has been updated.  Version 2.0 of 
 
 The following is a sample of the updated results from our first publication~\cite{ALDH}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/ApproximateEntropy_3_3.png}
-\label{fig:approxentropy33}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/ApproximateEntropy_3_3.png}
+%\label{fig:approxentropy33}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/ApproximateEntropy_4_5.png}
+%\label{fig:approxentropy45}
+%\end{figure}
+
+\begin{figure}[h!] % Do not use only [h] in real documents.
+\begin{minipage}[t]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/ApproximateEntropy_3_3.png}
+%\caption{ figure}
+\end{minipage}\hfill
+\begin{minipage}[b]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/ApproximateEntropy_4_5.png}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/ApproximateEntropy_4_5.png}
-\label{fig:approxentropy45}
+
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/LinearComplexity_3_3.png}
+%\label{fig:linear33}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/LinearComplexity_4_5.png}
+%\label{fig:linear45}
+%\end{figure}
+
+
+\begin{figure}[h!] % Do not use only [h] in real documents.
+\begin{minipage}[t]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/LinearComplexity_3_3.png}
+%\caption{ figure}
+\end{minipage}\hfill
+\begin{minipage}[b]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/LinearComplexity_4_5.png}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/LinearComplexity_3_3.png}
-\label{fig:linear33}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/Rank_3_3.png}
+%\label{fig:rank33}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.5]{./charts/Rank_4_5.png}
+%\label{fig:rank45}
+%\end{figure}
+\newpage
+
+\begin{figure}[h!] % Do not use only [h] in real documents.
+\begin{minipage}[t]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/Rank_3_3.png}
+%\caption{ figure}
+\end{minipage}\hfill
+\begin{minipage}[b]{.5\linewidth}
+\includegraphics[width=\linewidth]{./charts/Rank_4_5.png}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/LinearComplexity_4_5.png}
-\label{fig:linear45}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/Rank_3_3.png}
-\label{fig:rank33}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{./charts/Rank_4_5.png}
-\label{fig:rank45}
-\end{figure}
-
-\clearpage
+%\clearpage
 \begin{thebibliography}{14}
 
 \bibitem{ALDH} Allen, D., La Luz, J., Salivia., G., Hardwick, J.,
